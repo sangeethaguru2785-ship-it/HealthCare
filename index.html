@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Health Center - Your Health, Our Priority</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Stackly Health Center" class="logo-image">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/services.html" class="nav-link">Services</a>
+                <a href="pages/doctors.html" class="nav-link">Doctors</a>
+                <a href="pages/appointment.html" class="nav-link">Appointment</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+                <a href="pages/login.html" class="nav-link nav-login-mobile">Login</a>
+            </div>
+            <div class="nav-actions">
+                <a href="pages/login.html" class="btn btn-outline btn-sm nav-login-desktop">
+                    <span>Login</span>
+                </a>
+                <button class="btn-emergency" id="emergencyBtn">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Emergency: 911</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg">
+                <source src="hero.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge" data-aos="fade-up">Welcome to Stackly</span>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    Your Health Is Our
+                    <span class="typed-text" id="typedText"></span>
+                    <span class="cursor-blink">|</span>
+                </h1>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                    Experience world-class healthcare with cutting-edge technology and compassionate professionals. 
+                    We're dedicated to providing you with the best medical care.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                    <a href="pages/appointment.html" class="btn btn-primary">
+                        <span>Book Appointment</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="pages/services.html" class="btn btn-secondary">
+                        <span>Our Services</span>
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item">
+                        <div class="stat-value"><span class="stat-number" data-count="25">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value"><span class="stat-number" data-count="50">0</span><span class="stat-suffix">K+</span></div>
+                        <span class="stat-label">Patients Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value"><span class="stat-number" data-count="100">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Expert Doctors</span>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value"><span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span></div>
+                        <span class="stat-label">Departments</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview" id="about">
+        <div class="container">
+            <div class="about-preview-content">
+                <div class="about-preview-image" data-aos="fade-right">
+                    <div class="image-container">
+                        <svg class="about-svg" viewBox="0 0 400 400">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="50" y="50" width="300" height="300" rx="30" fill="url(#grad2)" opacity="0.1"/>
+                            <rect x="80" y="80" width="240" height="240" rx="20" fill="url(#grad2)" opacity="0.2"/>
+                            <rect x="120" y="140" width="160" height="180" rx="10" fill="url(#grad2)"/>
+                            <rect x="140" y="160" width="40" height="40" rx="5" fill="#fff" opacity="0.8"/>
+                            <rect x="220" y="160" width="40" height="40" rx="5" fill="#fff" opacity="0.8"/>
+                            <rect x="140" y="220" width="40" height="40" rx="5" fill="#fff" opacity="0.8"/>
+                            <rect x="220" y="220" width="40" height="40" rx="5" fill="#fff" opacity="0.8"/>
+                            <rect x="180" y="280" width="40" height="40" rx="5" fill="#fff" opacity="0.9"/>
+                            <rect x="175" y="120" width="50" height="30" rx="5" fill="#EF4444"/>
+                            <text x="200" y="140" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">+</text>
+                            <circle cx="100" cy="100" r="20" fill="url(#grad2)" opacity="0.3"/>
+                            <circle cx="300" cy="300" r="30" fill="url(#grad2)" opacity="0.3"/>
+                        </svg>
+                        <div class="experience-badge">
+                            <span class="years">25+</span>
+                            <span class="text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-preview-text" data-aos="fade-left">
+                    <span class="section-badge">About Us</span>
+                    <h2 class="section-title">Leading Healthcare Provider With A Difference</h2>
+                    <p class="about-description">
+                        At Stackly Health Center, we combine cutting-edge medical technology with compassionate care 
+                        to deliver exceptional healthcare services. Our team of world-class doctors are dedicated to 
+                        improving your quality of life.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="feature-text">
+                                <h4>Advanced Technology</h4>
+                                <p>State-of-the-art medical equipment</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="feature-text">
+                                <h4>Expert Doctors</h4>
+                                <p>Highly qualified professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="pages/about.html" class="btn btn-primary">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="services-preview" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Comprehensive Healthcare Services</h2>
+                <p class="section-description">We offer a wide range of medical services to meet all your healthcare needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Emergency Care</h3>
+                    <p>24/7 emergency medical services with rapid response teams.</p>
+                    <a href="pages/services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Complete heart care services including diagnosis and treatment.</p>
+                    <a href="pages/services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Expert neurological care for brain and nervous system.</p>
+                    <a href="pages/services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Specialized treatment for bones, joints, and muscles.</p>
+                    <a href="pages/services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Comprehensive healthcare for infants and children.</p>
+                    <a href="pages/services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h3>Dermatology</h3>
+                    <p>Expert skin care treatments and cosmetic procedures.</p>
+                    <a href="pages/services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="services-cta" data-aos="fade-up">
+                <a href="pages/services.html" class="btn btn-primary">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Expert Doctors</p>
+                    </div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="50000">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Happy Patients</p>
+                    </div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="25">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Departments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Preview Section -->
+    <section class="team-preview">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Our Team</span>
+                <h2 class="section-title">Meet Our Expert Doctors</h2>
+                <p class="section-description">Our team of experienced physicians is dedicated to providing you with the best healthcare.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card-image">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="150" cy="150" r="150" fill="#EFF6FF"/>
+                            <circle cx="150" cy="110" r="45" fill="#60A5FA"/>
+                            <ellipse cx="150" cy="220" rx="65" ry="55" fill="#2563EB"/>
+                            <circle cx="150" cy="110" r="35" fill="#F8FAFC"/>
+                            <circle cx="138" cy="105" r="4" fill="#1F2937"/>
+                            <circle cx="162" cy="105" r="4" fill="#1F2937"/>
+                            <path d="M142,120 Q150,128 158,120" stroke="#1F2937" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="135" y="75" width="30" height="8" rx="4" fill="#60A5FA"/>
+                        </svg>
+                    </div>
+                    <div class="team-card-content">
+                        <h4>Dr. Sarah Johnson</h4>
+                        <span class="team-specialty">Cardiologist</span>
+                        <p>Board certified with 15+ years of experience in interventional cardiology.</p>
+                        <div class="team-social">
+                            <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card-image">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="150" cy="150" r="150" fill="#EFF6FF"/>
+                            <circle cx="150" cy="110" r="45" fill="#10B981"/>
+                            <ellipse cx="150" cy="220" rx="65" ry="55" fill="#059669"/>
+                            <circle cx="150" cy="110" r="35" fill="#F8FAFC"/>
+                            <circle cx="138" cy="105" r="4" fill="#1F2937"/>
+                            <circle cx="162" cy="105" r="4" fill="#1F2937"/>
+                            <path d="M142,120 Q150,128 158,120" stroke="#1F2937" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="130" y="75" width="40" height="8" rx="4" fill="#10B981"/>
+                        </svg>
+                    </div>
+                    <div class="team-card-content">
+                        <h4>Dr. Michael Chen</h4>
+                        <span class="team-specialty">Neurologist</span>
+                        <p>Specialized in neurodegenerative disorders with 20+ years of clinical practice.</p>
+                        <div class="team-social">
+                            <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card-image">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="150" cy="150" r="150" fill="#EFF6FF"/>
+                            <circle cx="150" cy="110" r="45" fill="#F59E0B"/>
+                            <ellipse cx="150" cy="220" rx="65" ry="55" fill="#D97706"/>
+                            <circle cx="150" cy="110" r="35" fill="#F8FAFC"/>
+                            <circle cx="138" cy="105" r="4" fill="#1F2937"/>
+                            <circle cx="162" cy="105" r="4" fill="#1F2937"/>
+                            <path d="M142,120 Q150,128 158,120" stroke="#1F2937" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="125" y="75" width="50" height="8" rx="4" fill="#F59E0B"/>
+                        </svg>
+                    </div>
+                    <div class="team-card-content">
+                        <h4>Dr. Emily Williams</h4>
+                        <span class="team-specialty">Pediatrician</span>
+                        <p>Compassionate care for children with 12+ years in pediatric medicine.</p>
+                        <div class="team-social">
+                            <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card-image">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="150" cy="150" r="150" fill="#EFF6FF"/>
+                            <circle cx="150" cy="110" r="45" fill="#EF4444"/>
+                            <ellipse cx="150" cy="220" rx="65" ry="55" fill="#DC2626"/>
+                            <circle cx="150" cy="110" r="35" fill="#F8FAFC"/>
+                            <circle cx="138" cy="105" r="4" fill="#1F2937"/>
+                            <circle cx="162" cy="105" r="4" fill="#1F2937"/>
+                            <path d="M142,120 Q150,128 158,120" stroke="#1F2937" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="128" y="75" width="44" height="8" rx="4" fill="#EF4444"/>
+                        </svg>
+                    </div>
+                    <div class="team-card-content">
+                        <h4>Dr. James Martinez</h4>
+                        <span class="team-specialty">Orthopedic Surgeon</span>
+                        <p>Expert in joint replacement and sports medicine with 18+ years experience.</p>
+                        <div class="team-social">
+                            <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-cta" data-aos="fade-up">
+                <a href="pages/doctors.html" class="btn btn-primary">
+                    <span>View All Doctors</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our Patients Say</h2>
+                <p class="section-description">Real experiences from our valued patients who trust us with their healthcare.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The care I received at Stackly was exceptional. Dr. Johnson took the time to explain everything and made me feel completely at ease during my heart procedure."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="30" r="30" fill="#DBEAFE"/>
+                                <circle cx="30" cy="22" r="10" fill="#60A5FA"/>
+                                <ellipse cx="30" cy="48" rx="16" ry="12" fill="#2563EB"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>Robert Anderson</h5>
+                            <span>Cardiology Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Stackly Health Center changed my life. After years of back pain, Dr. Martinez performed a minimally invasive surgery that had me back on my feet in weeks. The entire staff was incredibly supportive throughout my recovery."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="30" r="30" fill="#D1FAE5"/>
+                                <circle cx="30" cy="22" r="10" fill="#10B981"/>
+                                <ellipse cx="30" cy="48" rx="16" ry="12" fill="#059669"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>Maria Santos</h5>
+                            <span>Orthopedics Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Bringing my daughter to Dr. Williams was the best decision. She's so gentle and patient with kids. My daughter actually looks forward to her check-ups now!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="30" r="30" fill="#FEF3C7"/>
+                                <circle cx="30" cy="22" r="10" fill="#F59E0B"/>
+                                <ellipse cx="30" cy="48" rx="16" ry="12" fill="#D97706"/>
+                            </svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>Jennifer Thompson</h5>
+                            <span>Pediatrics Parent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Health Tips Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Blog & Tips</span>
+                <h2 class="section-title">Healthcare Insights</h2>
+                <p class="section-description">Stay informed with the latest health tips, news, and medical breakthroughs.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="220" fill="#EFF6FF" rx="12"/>
+                            <circle cx="200" cy="90" r="40" fill="#2563EB" opacity="0.15"/>
+                            <path d="M185,90 L195,100 L215,80" stroke="#2563EB" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="80" y="150" width="240" height="8" rx="4" fill="#BFDBFE" opacity="0.6"/>
+                            <rect x="120" y="170" width="160" height="8" rx="4" fill="#BFDBFE" opacity="0.4"/>
+                            <rect x="150" y="190" width="100" height="8" rx="4" fill="#BFDBFE" opacity="0.3"/>
+                        </svg>
+                        <span class="blog-category">Heart Health</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> Jan 15, 2024</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h4>10 Tips for a Healthier Heart This Year</h4>
+                        <p>Discover simple lifestyle changes that can significantly improve your cardiovascular health and reduce risk factors.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="220" fill="#D1FAE5" rx="12"/>
+                            <circle cx="200" cy="90" r="40" fill="#10B981" opacity="0.15"/>
+                            <path d="M185,80 L200,105 L225,75" stroke="#10B981" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="80" y="150" width="240" height="8" rx="4" fill="#A7F3D0" opacity="0.6"/>
+                            <rect x="120" y="170" width="160" height="8" rx="4" fill="#A7F3D0" opacity="0.4"/>
+                            <rect x="150" y="190" width="100" height="8" rx="4" fill="#A7F3D0" opacity="0.3"/>
+                        </svg>
+                        <span class="blog-category">Mental Health</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> Jan 10, 2024</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h4>Understanding Stress and Its Impact on Health</h4>
+                        <p>Learn how chronic stress affects your body and discover effective techniques for stress management.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="220" fill="#FEF3C7" rx="12"/>
+                            <circle cx="200" cy="90" r="40" fill="#F59E0B" opacity="0.15"/>
+                            <path d="M190,90 L200,80 L210,90 L200,100 Z" stroke="#F59E0B" stroke-width="3" fill="none"/>
+                            <rect x="80" y="150" width="240" height="8" rx="4" fill="#FDE68A" opacity="0.6"/>
+                            <rect x="120" y="170" width="160" height="8" rx="4" fill="#FDE68A" opacity="0.4"/>
+                            <rect x="150" y="190" width="100" height="8" rx="4" fill="#FDE68A" opacity="0.3"/>
+                        </svg>
+                        <span class="blog-category">Nutrition</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> Jan 5, 2024</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h4>The Complete Guide to Immune-Boosting Foods</h4>
+                        <p>Explore the top foods and nutrients that strengthen your immune system and keep you healthy year-round.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-cta" data-aos="fade-up">
+                <a href="#" class="btn btn-primary">
+                    <span>View All Articles</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <span class="newsletter-badge"><i class="fas fa-envelope"></i> Stay Updated</span>
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest health tips, medical news, and exclusive updates delivered straight to your inbox.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+            <div class="newsletter-features" data-aos="fade-up" data-aos-delay="100">
+                <div class="newsletter-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>No Spam, Ever</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Weekly Digest</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Health Tips</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="#0F172A"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.webp" alt="Stackly Health Center" class="logo-image">
+                    </a>
+                    <p class="footer-description">
+                        Dedicated to providing exceptional healthcare services with compassion, 
+                        innovation, and excellence.
+                    </p>
+                    <div class="social-links">
+                        <a href="404.html" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" class="social-link"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="404.html" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="pages/about.html">About Us</a></li>
+                            <li><a href="pages/services.html">Services</a></li>
+                            <li><a href="pages/doctors.html">Our Doctors</a></li>
+                            <li><a href="pages/appointment.html">Book Appointment</a></li>
+                            <li><a href="pages/contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="pages/services.html">Emergency Care</a></li>
+                            <li><a href="pages/services.html">Cardiology</a></li>
+                            <li><a href="pages/services.html">Neurology</a></li>
+                            <li><a href="pages/services.html">Orthopedics</a></li>
+                            <li><a href="pages/services.html">Pediatrics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Health Avenue, Medical District<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Main: +1 (555) 123-4567<br>Emergency: +1 (555) 911-0000</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@stackly.com<br>support@stackly.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Working Hours</h4>
+                        <ul class="working-hours">
+                            <li><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></li>
+                            <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                            <li><span>Sunday</span><span>10:00 AM - 2:00 PM</span></li>
+                            <li><span>Emergency</span><span class="emergency-badge">24/7 Available</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stackly Health Center. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

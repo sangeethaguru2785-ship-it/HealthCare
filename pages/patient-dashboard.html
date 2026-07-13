@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Stackly Health Center</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>body{background:#F1F5F9;}</style>
+</head>
+<body class="dashboard-page">
+
+<!-- Sidebar Overlay (mobile) -->
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <a href="../index.html"><img src="../images/logo.webp" alt="Stackly" class="sidebar-logo"></a>
+        <span class="sidebar-brand">Stack<span>ly</span></span>
+    </div>
+    <span class="sidebar-role" style="margin:12px 22px 0;display:inline-block;">Patient</span>
+
+    <nav class="sidebar-nav">
+        <div class="sidebar-label">Main</div>
+        <a class="sidebar-link active" data-section="overview" href="#"><i class="fas fa-th-large"></i> Dashboard</a>
+        <a class="sidebar-link" data-section="appointments-section" href="#"><i class="fas fa-calendar-check"></i> My Appointments <span class="badge">3</span></a>
+
+        <div class="sidebar-label">Health</div>
+        <a class="sidebar-link" data-section="records-section" href="#"><i class="fas fa-file-medical"></i> Medical Records</a>
+        <a class="sidebar-link" data-section="prescriptions-section" href="#"><i class="fas fa-pills"></i> Prescriptions</a>
+        <a class="sidebar-link" data-section="lab-section" href="#"><i class="fas fa-flask"></i> Lab Results</a>
+
+        <div class="sidebar-label">Financial</div>
+        <a class="sidebar-link" data-section="billing-section" href="#"><i class="fas fa-file-invoice-dollar"></i> Billing & Payments</a>
+
+        <div class="sidebar-label">Tools</div>
+        <a class="sidebar-link" data-section="reports-section" href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+        <a class="sidebar-link" data-section="emergency-section" href="#"><i class="fas fa-heartbeat"></i> Emergency Info</a>
+        <a class="sidebar-link" data-section="settings-section" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="sidebar-user">
+            <div class="sidebar-avatar">SJ</div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name">Sarah Johnson</div>
+                <div class="sidebar-user-role">Patient</div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="dashboard-main">
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+            <div class="topbar-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search records, prescriptions...">
+            </div>
+        </div>
+        <div class="topbar-right" style="position:relative;">
+            <button class="topbar-icon"><i class="fas fa-expand"></i></button>
+            <div class="topbar-profile">
+                <div class="topbar-profile-avatar">SJ</div>
+                <div class="topbar-profile-info">
+                    <div class="topbar-profile-name">Sarah Johnson</div>
+                    <div class="topbar-profile-role">Patient</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+
+        <!-- ===== OVERVIEW ===== -->
+        <div class="section-panel active" id="overview">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <h2>Welcome back, Sarah!</h2>
+                <p>Here's your health overview for today. Stay on track with your wellness goals.</p>
+                <div class="welcome-stats">
+                    <div class="welcome-stat">
+                        <div class="welcome-stat-value">Jan 20</div>
+                        <div class="welcome-stat-label">Next Appointment</div>
+                    </div>
+                    <div class="welcome-stat">
+                        <div class="welcome-stat-value" data-count="24">0</div>
+                        <div class="welcome-stat-label">Total Visits</div>
+                    </div>
+                    <div class="welcome-stat">
+                        <div class="welcome-stat-value" data-count="2">0</div>
+                        <div class="welcome-stat-label">Active Prescriptions</div>
+                    </div>
+                    <div class="welcome-stat">
+                        <div class="welcome-stat-value" data-count="85" data-suffix="%">0</div>
+                        <div class="welcome-stat-label">Health Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Upcoming Appointments</h3>
+                        <div class="stat-card-value" data-count="3">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> Next: Jan 20</span>
+                    </div>
+                    <div class="stat-card-icon blue"><i class="fas fa-calendar-check"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Total Visits</h3>
+                        <div class="stat-card-value" data-count="24">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> 4 this month</span>
+                    </div>
+                    <div class="stat-card-icon green"><i class="fas fa-hospital"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Active Prescriptions</h3>
+                        <div class="stat-card-value" data-count="2">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> Refill in 3 days</span>
+                    </div>
+                    <div class="stat-card-icon purple"><i class="fas fa-pills"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Health Score</h3>
+                        <div class="stat-card-value" data-count="85" data-suffix="%">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> +5% this month</span>
+                    </div>
+                    <div class="stat-card-icon orange"><i class="fas fa-heartbeat"></i></div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Health Progress</h3>
+                        <div class="chart-filters">
+                            <button class="chart-filter active">6M</button>
+                            <button class="chart-filter">1Y</button>
+                        </div>
+                    </div>
+                    <div class="chart-body"><canvas id="healthProgressChart"></canvas></div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Appointments History</h3>
+                        <div class="chart-filters">
+                            <button class="chart-filter active">6M</button>
+                            <button class="chart-filter">1Y</button>
+                        </div>
+                    </div>
+                    <div class="chart-body"><canvas id="appointmentsHistoryChart"></canvas></div>
+                </div>
+            </div>
+
+            <!-- Upcoming Appointments Table -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>Upcoming Appointments</h3>
+                    <div class="table-actions">
+                        <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-section=appointments-section]').click();"><i class="fas fa-calendar-plus"></i> View All</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Date</th><th>Time</th><th>Doctor</th><th>Department</th><th>Purpose</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>Jan 20, 2025</td><td>10:00 AM</td><td>Dr. Robert Smith</td><td>Cardiology</td><td>Annual Checkup</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>Jan 28, 2025</td><td>02:30 PM</td><td>Dr. Emily Williams</td><td>General</td><td>Follow-up</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>Feb 05, 2025</td><td>11:00 AM</td><td>Dr. Michael Chen</td><td>Neurology</td><td>Consultation</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Actions & Activity -->
+            <div class="two-col-grid">
+                <div>
+                    <div class="quick-actions-grid">
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=appointments-section]').click();return false;">
+                            <div class="qa-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-calendar-plus"></i></div>
+                            <span>Book Appointment</span>
+                        </a>
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=records-section]').click();return false;">
+                            <div class="qa-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-file-medical"></i></div>
+                            <span>View Records</span>
+                        </a>
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=reports-section]').click();return false;">
+                            <div class="qa-icon" style="background:#F3E8FF;color:#9333EA;"><i class="fas fa-download"></i></div>
+                            <span>Download Report</span>
+                        </a>
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=emergency-section]').click();return false;">
+                            <div class="qa-icon" style="background:#FEE2E2;color:#DC2626;"><i class="fas fa-phone-alt"></i></div>
+                            <span>Emergency Contact</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-clock"></i> Activity Timeline</h4>
+                    <ul class="activity-list">
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-calendar-check"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Appointment confirmed</strong> with Dr. Smith for Jan 20</div>
+                                <div class="activity-time">5 minutes ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-flask"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Lab results</strong> for Complete Blood Count uploaded</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#FEF3C7;color:#D97706;"><i class="fas fa-pills"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Prescription renewed</strong> for Metformin 500mg</div>
+                                <div class="activity-time">Yesterday</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#FEE2E2;color:#DC2626;"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Payment received</strong> - Invoice #INV-4521 paid</div>
+                                <div class="activity-time">2 days ago</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MY APPOINTMENTS ===== -->
+        <div class="section-panel" id="appointments-section">
+            <div class="page-header">
+                <div><h1>My Appointments</h1><p>View and manage all your appointments</p></div>
+                <div class="page-actions"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Book Appointment</button></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total</h3><div class="stat-card-value" data-count="24">0</div></div><div class="stat-card-icon blue"><i class="fas fa-calendar"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Upcoming</h3><div class="stat-card-value" data-count="3">0</div></div><div class="stat-card-icon purple"><i class="fas fa-clock"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Completed</h3><div class="stat-card-value" data-count="18">0</div></div><div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Cancelled</h3><div class="stat-card-value" data-count="3">0</div></div><div class="stat-card-icon orange"><i class="fas fa-times-circle"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Appointments</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div><select class="table-filter"><option>All Status</option><option>Confirmed</option><option>Pending</option><option>Completed</option><option>Cancelled</option></select></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>ID</th><th>Doctor</th><th>Department</th><th>Date</th><th>Time</th><th>Purpose</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#APT-1001</td><td>Dr. Robert Smith</td><td>Cardiology</td><td>Jan 20, 2025</td><td>10:00 AM</td><td>Annual Checkup</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#APT-1002</td><td>Dr. Emily Williams</td><td>General</td><td>Jan 28, 2025</td><td>02:30 PM</td><td>Follow-up</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#APT-1003</td><td>Dr. Michael Chen</td><td>Neurology</td><td>Feb 05, 2025</td><td>11:00 AM</td><td>Consultation</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#APT-1004</td><td>Dr. Robert Smith</td><td>Cardiology</td><td>Jan 10, 2025</td><td>09:30 AM</td><td>ECG Test</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#APT-1005</td><td>Dr. Sarah Johnson</td><td>Dermatology</td><td>Jan 05, 2025</td><td>03:00 PM</td><td>Skin Allergy</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#APT-1006</td><td>Dr. Emily Williams</td><td>General</td><td>Dec 28, 2024</td><td>01:00 PM</td><td>General Checkup</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#APT-1007</td><td>Dr. James Martinez</td><td>Orthopedics</td><td>Dec 15, 2024</td><td>10:30 AM</td><td>Knee Pain</td><td><span class="status-badge cancelled"><span class="status-dot"></span>Cancelled</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination"><span>Showing 1-7 of 24 appointments</span><div class="pagination-btns"><button class="pagination-btn"><i class="fas fa-chevron-left"></i></button><button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn"><i class="fas fa-chevron-right"></i></button></div></div>
+            </div>
+        </div>
+
+        <!-- ===== MEDICAL RECORDS ===== -->
+        <div class="section-panel" id="records-section">
+            <div class="page-header">
+                <div><h1>Medical Records</h1><p>Access your complete medical history</p></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Records</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search records..."></div></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Record ID</th><th>Doctor</th><th>Type</th><th>Date</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#MED-4521</td><td>Dr. Robert Smith</td><td>Lab Report</td><td>Jan 14, 2025</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-4520</td><td>Dr. Emily Williams</td><td>Prescription</td><td>Jan 10, 2025</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-4519</td><td>Dr. Robert Smith</td><td>Diagnosis</td><td>Jan 05, 2025</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-4518</td><td>Dr. Sarah Johnson</td><td>Lab Report</td><td>Dec 28, 2024</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-4517</td><td>Dr. Michael Chen</td><td>Consultation Notes</td><td>Dec 15, 2024</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-4516</td><td>Dr. Emily Williams</td><td>Vaccination</td><td>Dec 01, 2024</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination"><span>Showing 1-6 of 24 records</span><div class="pagination-btns"><button class="pagination-btn"><i class="fas fa-chevron-left"></i></button><button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn"><i class="fas fa-chevron-right"></i></button></div></div>
+            </div>
+        </div>
+
+        <!-- ===== PRESCRIPTIONS ===== -->
+        <div class="section-panel" id="prescriptions-section">
+            <div class="page-header">
+                <div><h1>Prescriptions</h1><p>View and track all your medications</p></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Prescriptions</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search prescriptions..."></div><select class="table-filter"><option>All Status</option><option>Active</option><option>Completed</option><option>Expired</option></select></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Prescription ID</th><th>Doctor</th><th>Medication</th><th>Dosage</th><th>Duration</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#RX-2201</td><td>Dr. Robert Smith</td><td>Lisinopril</td><td>10mg once daily</td><td>90 Days</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#RX-2202</td><td>Dr. Emily Williams</td><td>Metformin</td><td>500mg twice daily</td><td>60 Days</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#RX-2203</td><td>Dr. Sarah Johnson</td><td>Cetirizine</td><td>10mg as needed</td><td>30 Days</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#RX-2204</td><td>Dr. Michael Chen</td><td>Ibuprofen</td><td>400mg thrice daily</td><td>14 Days</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#RX-2205</td><td>Dr. Robert Smith</td><td>Atorvastatin</td><td>20mg at bedtime</td><td>90 Days</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== LAB RESULTS ===== -->
+        <div class="section-panel" id="lab-section">
+            <div class="page-header">
+                <div><h1>Lab Results</h1><p>View your recent test results and reports</p></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Tests</h3><div class="stat-card-value" data-count="12">0</div></div><div class="stat-card-icon blue"><i class="fas fa-flask"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Normal</h3><div class="stat-card-value" data-count="8">0</div></div><div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Abnormal</h3><div class="stat-card-value" data-count="3">0</div></div><div class="stat-card-icon orange"><i class="fas fa-exclamation-triangle"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Critical</h3><div class="stat-card-value" data-count="1">0</div></div><div class="stat-card-icon red"><i class="fas fa-times-circle"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Lab Results</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search tests..."></div><select class="table-filter"><option>All Status</option><option>Normal</option><option>Abnormal</option><option>Critical</option></select></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Test ID</th><th>Test Name</th><th>Date</th><th>Result</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#LAB-3301</td><td>Complete Blood Count</td><td>Jan 14, 2025</td><td>WBC: 7.2, RBC: 4.8, Hgb: 14.1</td><td><span class="status-badge normal"><span class="status-dot"></span>Normal</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#LAB-3302</td><td>Lipid Panel</td><td>Jan 14, 2025</td><td>TChol: 210, LDL: 135, HDL: 52</td><td><span class="status-badge abnormal"><span class="status-dot"></span>Abnormal</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#LAB-3303</td><td>Blood Glucose (Fasting)</td><td>Jan 10, 2025</td><td>110 mg/dL</td><td><span class="status-badge abnormal"><span class="status-dot"></span>Abnormal</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#LAB-3304</td><td>Thyroid Panel (TSH)</td><td>Jan 05, 2025</td><td>TSH: 2.5 mIU/L</td><td><span class="status-badge normal"><span class="status-dot"></span>Normal</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#LAB-3305</td><td>Urine Analysis</td><td>Dec 28, 2024</td><td>Protein: Negative, Glucose: Trace</td><td><span class="status-badge abnormal"><span class="status-dot"></span>Abnormal</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#LAB-3306</td><td>Hemoglobin A1C</td><td>Dec 20, 2024</td><td>6.2%</td><td><span class="status-badge critical"><span class="status-dot"></span>Critical</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#LAB-3307</td><td>Vitamin D</td><td>Dec 15, 2024</td><td>32 ng/mL</td><td><span class="status-badge normal"><span class="status-dot"></span>Normal</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BILLING & PAYMENTS ===== -->
+        <div class="section-panel" id="billing-section">
+            <div class="page-header">
+                <div><h1>Billing & Payments</h1><p>View your invoices and payment history</p></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Paid</h3><div class="stat-card-value" data-prefix="$" data-count="4200">0</div></div><div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Pending</h3><div class="stat-card-value" data-prefix="$" data-count="320">0</div></div><div class="stat-card-icon orange"><i class="fas fa-hourglass-half"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Insurance Covered</h3><div class="stat-card-value" data-prefix="$" data-count="3500">0</div></div><div class="stat-card-icon blue"><i class="fas fa-shield-alt"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>Invoices</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search invoices..."></div></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Invoice</th><th>Description</th><th>Amount</th><th>Insurance</th><th>You Pay</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#INV-4521</td><td>Annual Checkup - Dr. Smith</td><td>$450.00</td><td>$350.00</td><td>$100.00</td><td>Jan 14</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#INV-4520</td><td>Lab Tests - Blood Panel</td><td>$280.00</td><td>$220.00</td><td>$60.00</td><td>Jan 10</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#INV-4519</td><td>Dermatology Consultation</td><td>$200.00</td><td>$150.00</td><td>$50.00</td><td>Jan 05</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#INV-4518</td><td>General Checkup - Dr. Williams</td><td>$180.00</td><td>$130.00</td><td>$50.00</td><td>Dec 28</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#INV-4517</td><td>Neurology Consultation</td><td>$320.00</td><td>$250.00</td><td>$70.00</td><td>Dec 15</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#INV-4516</td><td>ECG Test</td><td>$150.00</td><td>$120.00</td><td>$30.00</td><td>Dec 01</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== REPORTS ===== -->
+        <div class="section-panel" id="reports-section">
+            <div class="page-header"><div><h1>Reports</h1><p>Download and view your health reports</p></div></div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Reports Available</h3><div class="stat-card-value" data-count="12">0</div></div><div class="stat-card-icon blue"><i class="fas fa-file-alt"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Downloaded</h3><div class="stat-card-value" data-count="8">0</div></div><div class="stat-card-icon green"><i class="fas fa-download"></i></div></div>
+            </div>
+            <div class="quick-actions-grid">
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-file-pdf"></i></div><span>Health Summary</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-file-pdf"></i></div><span>Lab Reports</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#F3E8FF;color:#9333EA;"><i class="fas fa-file-pdf"></i></div><span>Prescription History</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#FFF7ED;color:#EA580C;"><i class="fas fa-file-pdf"></i></div><span>Billing Statement</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#FEE2E2;color:#DC2626;"><i class="fas fa-file-pdf"></i></div><span>Insurance Claims</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#CCFBF1;color:#0D9488;"><i class="fas fa-file-pdf"></i></div><span>Vaccination Record</span></a>
+            </div>
+        </div>
+
+        <!-- ===== EMERGENCY INFO ===== -->
+        <div class="section-panel" id="emergency-section">
+            <div class="page-header"><div><h1>Emergency Info</h1><p>Important information for emergencies</p></div></div>
+            <div class="three-col-grid">
+                <div class="info-card">
+                    <h4><i class="fas fa-phone-alt" style="color:#DC2626;"></i> Emergency Contact</h4>
+                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value">Robert Johnson</span></div>
+                    <div class="info-row"><span class="info-row-label">Phone</span><span class="info-row-value">(555) 987-6543</span></div>
+                    <div class="info-row"><span class="info-row-label">Relationship</span><span class="info-row-value">Spouse</span></div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-tint" style="color:#DC2626;"></i> Blood Type</h4>
+                    <div class="info-row"><span class="info-row-label">Blood Type</span><span class="info-row-value" style="font-size:1.4rem;font-weight:700;color:#DC2626;">O+</span></div>
+                    <div class="info-row"><span class="info-row-label">Rh Factor</span><span class="info-row-value">Positive</span></div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-exclamation-triangle" style="color:#D97706;"></i> Allergies</h4>
+                    <div class="info-row"><span class="info-row-label">Drug Allergies</span><span class="info-row-value" style="color:#DC2626;">Penicillin, Sulfa</span></div>
+                    <div class="info-row"><span class="info-row-label">Food Allergies</span><span class="info-row-value" style="color:#D97706;">Peanuts</span></div>
+                    <div class="info-row"><span class="info-row-label">Environmental</span><span class="info-row-value">Dust Mites</span></div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-shield-alt" style="color:#2563EB;"></i> Insurance Information</h4>
+                    <div class="info-row"><span class="info-row-label">Provider</span><span class="info-row-value">BlueCross BlueShield</span></div>
+                    <div class="info-row"><span class="info-row-label">Policy Number</span><span class="info-row-value">BC-987654321</span></div>
+                    <div class="info-row"><span class="info-row-label">Group Number</span><span class="info-row-value">GRP-45678</span></div>
+                    <div class="info-row"><span class="info-row-label">Valid Until</span><span class="info-row-value">Dec 31, 2025</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SETTINGS ===== -->
+        <div class="section-panel" id="settings-section">
+            <div class="page-header"><div><h1>Settings</h1><p>Manage your profile and account settings</p></div></div>
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <h4><i class="fas fa-user"></i> Profile Information</h4>
+                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value">Sarah Johnson</span></div>
+                    <div class="info-row"><span class="info-row-label">Email</span><span class="info-row-value">sarah.johnson@email.com</span></div>
+                    <div class="info-row"><span class="info-row-label">Phone</span><span class="info-row-value">(555) 123-4567</span></div>
+                    <div class="info-row"><span class="info-row-label">Date of Birth</span><span class="info-row-value">Mar 15, 1990</span></div>
+                    <div class="info-row"><span class="info-row-label">Address</span><span class="info-row-value">123 Maple Street, Springfield, IL</span></div>
+                    <div class="info-row"><span class="info-row-label">Patient ID</span><span class="info-row-value">PAT-10234</span></div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-shield-alt"></i> Security</h4>
+                    <div class="info-row"><span class="info-row-label">Password</span><span class="info-row-value"><a href="#" style="color:#2563EB;">Change Password</a></span></div>
+                    <div class="info-row"><span class="info-row-label">Two-Factor Auth</span><span class="info-row-value" style="color:#059669;">Enabled</span></div>
+                    <div class="info-row"><span class="info-row-label">Last Login</span><span class="info-row-value">Jan 15, 2025 08:30 AM</span></div>
+                    <div class="info-row"><span class="info-row-label">Session</span><span class="info-row-value"><a href="#" style="color:#DC2626;">Sign Out All Devices</a></span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="../js/dashboard.js"></script>
+<script>
+function initPatientCharts(){
+    const chartDefaults={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{beginAtZero:false,grid:{color:'#F1F5F9'}}}};
+
+    new Chart(document.getElementById('healthProgressChart'),{type:'line',data:{labels:['Aug','Sep','Oct','Nov','Dec','Jan'],datasets:[{label:'Weight (lbs)',data:[172,170,168,165,163,160],borderColor:'#2563EB',backgroundColor:'rgba(37,99,235,0.08)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#2563EB',borderWidth:2.5},{label:'Blood Pressure (Sys)',data:[138,135,132,128,125,122],borderColor:'#10B981',backgroundColor:'rgba(16,185,129,0.08)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#10B981',borderWidth:2.5}]},options:{...chartDefaults,plugins:{legend:{display:true,labels:{padding:16,usePointStyle:true,pointStyle:'circle',font:{size:12,family:'Poppins'}}}}}});
+
+    new Chart(document.getElementById('appointmentsHistoryChart'),{type:'bar',data:{labels:['Aug','Sep','Oct','Nov','Dec','Jan'],datasets:[{label:'Appointments',data:[3,4,2,5,3,3],backgroundColor:'rgba(37,99,235,0.85)',borderRadius:8,barThickness:28}]},options:chartDefaults});
+}
+</script>
+</body>
+</html>

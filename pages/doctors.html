@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - Stackly Health Center</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/doctors.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="doctors.html" class="nav-link active">Doctors</a>
+                <a href="appointment.html" class="nav-link">Appointment</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link nav-login-mobile">Login</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm nav-login-desktop">
+                    <span>Login</span>
+                </a>
+                <button class="btn-emergency">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Emergency: 911</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Our Doctors</h1>
+            <p>Meet our team of experienced healthcare professionals dedicated to your well-being.</p>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Doctors</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Grid -->
+    <section class="doctors-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Medical Team</span>
+                <h2 class="section-title">Meet Our Expert Doctors</h2>
+                <p class="section-description">Our team consists of highly qualified specialists committed to providing the best medical care.</p>
+            </div>
+
+            <!-- Department Filter -->
+            <div class="department-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cardiology">Cardiology</button>
+                <button class="filter-btn" data-filter="neurology">Neurology</button>
+                <button class="filter-btn" data-filter="orthopedics">Orthopedics</button>
+                <button class="filter-btn" data-filter="pediatrics">Pediatrics</button>
+                <button class="filter-btn" data-filter="dermatology">Dermatology</button>
+            </div>
+
+            <div class="doctors-grid">
+                <div class="doctor-card" data-department="cardiology" data-aos="fade-up" data-aos-delay="100">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <defs>
+                                <linearGradient id="doc1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#60A5FA"/>
+                                    <stop offset="100%" style="stop-color:#2563EB"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="url(#doc1)"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="url(#doc1)"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Sarah Johnson</h4>
+                        <p class="doctor-specialty">Chief Cardiologist</p>
+                        <p class="doctor-bio">With over 20 years of experience in cardiology, Dr. Johnson leads our heart care team with expertise in interventional cardiology.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (128 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="neurology" data-aos="fade-up" data-aos-delay="200">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#60A5FA"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#60A5FA"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                            <rect x="85" y="75" width="30" height="8" rx="2" fill="#60A5FA"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Michael Chen</h4>
+                        <p class="doctor-specialty">Neurologist</p>
+                        <p class="doctor-bio">Dr. Chen is a renowned neurologist specializing in stroke treatment and neurodegenerative disorders.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7 (95 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="pediatrics" data-aos="fade-up" data-aos-delay="300">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#2563EB"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#2563EB"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Emily Williams</h4>
+                        <p class="doctor-specialty">Pediatrician</p>
+                        <p class="doctor-bio">Dr. Williams is known for her compassionate care and expertise in child development and preventive medicine.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (156 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="orthopedics" data-aos="fade-up" data-aos-delay="400">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#1D4ED8"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#1D4ED8"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                            <rect x="82" y="72" width="36" height="12" rx="3" fill="#1D4ED8"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. James Anderson</h4>
+                        <p class="doctor-specialty">Orthopedic Surgeon</p>
+                        <p class="doctor-bio">Dr. Anderson specializes in joint replacement surgery and sports medicine with over 15 years of experience.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (142 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="dermatology" data-aos="fade-up" data-aos-delay="500">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#2563EB"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#2563EB"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Lisa Martinez</h4>
+                        <p class="doctor-specialty">Dermatologist</p>
+                        <p class="doctor-bio">Dr. Martinez is an expert in cosmetic dermatology and skin cancer treatment with a patient-first approach.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (110 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="cardiology" data-aos="fade-up" data-aos-delay="600">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#60A5FA"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#60A5FA"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Robert Taylor</h4>
+                        <p class="doctor-specialty">Cardiologist</p>
+                        <p class="doctor-bio">Dr. Taylor is specialized in preventive cardiology and heart failure management with extensive research background.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.6 (89 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="neurology" data-aos="fade-up" data-aos-delay="700">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#2563EB"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#2563EB"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                            <rect x="85" y="75" width="30" height="8" rx="2" fill="#2563EB"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. Amanda Brown</h4>
+                        <p class="doctor-specialty">Neurologist</p>
+                        <p class="doctor-bio">Dr. Brown specializes in epilepsy treatment and headache disorders with a focus on patient quality of life.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (105 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-department="pediatrics" data-aos="fade-up" data-aos-delay="800">
+                    <div class="doctor-image">
+                        <svg viewBox="0 0 200 250">
+                            <rect width="200" height="250" rx="20" fill="#F8FAFC"/>
+                            <circle cx="100" cy="90" r="45" fill="#1D4ED8"/>
+                            <circle cx="100" cy="90" r="35" fill="#e0f7fa"/>
+                            <circle cx="90" cy="85" r="4" fill="#333"/>
+                            <circle cx="110" cy="85" r="4" fill="#333"/>
+                            <path d="M90 100 Q100 108 110 100" stroke="#333" stroke-width="2" fill="none"/>
+                            <rect x="60" y="135" width="80" height="100" rx="10" fill="#1D4ED8"/>
+                            <rect x="75" y="135" width="50" height="15" rx="5" fill="#fff"/>
+                            <circle cx="100" cy="142" r="3" fill="#EF4444"/>
+                        </svg>
+                        <div class="doctor-social">
+                            <a href="../404.html"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="../404.html"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h4>Dr. David Wilson</h4>
+                        <p class="doctor-specialty">Pediatrician</p>
+                        <p class="doctor-bio">Dr. Wilson brings warmth and expertise to pediatric care, specializing in childhood nutrition and growth.</p>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (132 reviews)</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-primary btn-sm">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Our Doctors -->
+    <section class="why-doctors">
+        <div class="container">
+            <div class="why-doctors-content">
+                <div class="why-doctors-text" data-aos="fade-right">
+                    <span class="section-badge">Why Our Doctors</span>
+                    <h2 class="section-title">Excellence in Medical Care</h2>
+                    <p>Our doctors aren't just medical professionals — they are dedicated caregivers who go above and beyond to ensure every patient receives the highest quality treatment with compassion and respect.</p>
+                </div>
+                <div class="why-doctors-grid" data-aos="fade-left">
+                    <div class="why-doctor-item">
+                        <div class="why-doctor-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="why-doctor-info">
+                            <h4>Board Certified</h4>
+                            <p>All our physicians hold board certifications and undergo continuous education to stay current.</p>
+                        </div>
+                    </div>
+                    <div class="why-doctor-item">
+                        <div class="why-doctor-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="why-doctor-info">
+                            <h4>Research-Driven</h4>
+                            <p>Our doctors actively participate in medical research and clinical trials for advanced treatments.</p>
+                        </div>
+                    </div>
+                    <div class="why-doctor-item">
+                        <div class="why-doctor-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="why-doctor-info">
+                            <h4>Collaborative Approach</h4>
+                            <p>Multi-disciplinary teams work together to create comprehensive, personalized treatment plans.</p>
+                        </div>
+                    </div>
+                    <div class="why-doctor-item">
+                        <div class="why-doctor-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="why-doctor-info">
+                            <h4>Patient-First Mindset</h4>
+                            <p>Every decision is made with the patient's well-being as the top priority, ensuring comfort and trust.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Overview -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Departments</span>
+                <h2 class="section-title">Our Medical Departments</h2>
+                <p class="section-description">Each department is staffed with specialized experts and equipped with advanced technology.</p>
+            </div>
+            <div class="departments-grid">
+                <div class="department-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="dept-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h4>Cardiology</h4>
+                    <div class="dept-count"><span>8</span> Specialists</div>
+                    <p>Complete heart care from diagnostics to surgery.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="dept-icon"><i class="fas fa-brain"></i></div>
+                    <h4>Neurology</h4>
+                    <div class="dept-count"><span>6</span> Specialists</div>
+                    <p>Expert care for brain and nervous system disorders.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="dept-icon"><i class="fas fa-bone"></i></div>
+                    <h4>Orthopedics</h4>
+                    <div class="dept-count"><span>7</span> Specialists</div>
+                    <p>Advanced treatment for bones, joints, and muscles.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="dept-icon"><i class="fas fa-baby"></i></div>
+                    <h4>Pediatrics</h4>
+                    <div class="dept-count"><span>5</span> Specialists</div>
+                    <p>Gentle and comprehensive care for children.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="dept-icon"><i class="fas fa-allergies"></i></div>
+                    <h4>Dermatology</h4>
+                    <div class="dept-count"><span>4</span> Specialists</div>
+                    <p>Expert skin care and cosmetic treatments.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="dept-icon"><i class="fas fa-ribbon"></i></div>
+                    <h4>Oncology</h4>
+                    <div class="dept-count"><span>6</span> Specialists</div>
+                    <p>Comprehensive cancer diagnosis and treatment.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="dept-icon"><i class="fas fa-eye"></i></div>
+                    <h4>Ophthalmology</h4>
+                    <div class="dept-count"><span>3</span> Specialists</div>
+                    <p>Advanced eye care and vision correction.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="department-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="dept-icon"><i class="fas fa-kidneys"></i></div>
+                    <h4>Nephrology</h4>
+                    <div class="dept-count"><span>4</span> Specialists</div>
+                    <p>Kidney care, dialysis, and transplant support.</p>
+                    <a href="services.html" class="dept-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <span class="newsletter-badge"><i class="fas fa-envelope"></i> Stay Updated</span>
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest health tips, medical news, and exclusive updates delivered straight to your inbox.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+            <div class="newsletter-features" data-aos="fade-up" data-aos-delay="100">
+                <div class="newsletter-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>No Spam, Ever</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Weekly Digest</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Health Tips</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="#0F172A"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
+                    </a>
+                    <p class="footer-description">
+                        Dedicated to providing exceptional healthcare services with compassion, 
+                        innovation, and excellence.
+                    </p>
+                    <div class="social-links">
+                        <a href="../404.html" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="../404.html" class="social-link"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="../404.html" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="../404.html" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                            <li><a href="appointment.html">Book Appointment</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="services.html">Emergency Care</a></li>
+                            <li><a href="services.html">Cardiology</a></li>
+                            <li><a href="services.html">Neurology</a></li>
+                            <li><a href="services.html">Orthopedics</a></li>
+                            <li><a href="services.html">Pediatrics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Health Avenue, Medical District<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Main: +1 (555) 123-4567<br>Emergency: +1 (555) 911-0000</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@stackly.com<br>support@stackly.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Working Hours</h4>
+                        <ul class="working-hours">
+                            <li><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></li>
+                            <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                            <li><span>Sunday</span><span>10:00 AM - 2:00 PM</span></li>
+                            <li><span>Emergency</span><span class="emergency-badge">24/7 Available</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stackly Health Center. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/doctors.js"></script>
+</body>
+</html>

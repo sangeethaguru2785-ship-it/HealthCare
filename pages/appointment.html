@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Stackly Health Center</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/appointment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="doctors.html" class="nav-link">Doctors</a>
+                <a href="appointment.html" class="nav-link active">Appointment</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link nav-login-mobile">Login</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm nav-login-desktop">
+                    <span>Login</span>
+                </a>
+                <button class="btn-emergency">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Emergency: 911</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Book Appointment</h1>
+            <p>Schedule your visit with our expert doctors. Quick, easy, and secure.</p>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Appointment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-grid">
+                <!-- Info Side -->
+                <div class="appointment-info" data-aos="fade-right">
+                    <h2>Why Book With Us?</h2>
+                    <p>We make scheduling your healthcare visits simple and convenient.</p>
+                    
+                    <div class="info-features">
+                        <div class="info-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Quick & Easy Booking</h4>
+                                <p>Schedule your appointment in just a few clicks. No phone calls needed.</p>
+                            </div>
+                        </div>
+                        <div class="info-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Secure & Private</h4>
+                                <p>Your personal information is protected with industry-standard encryption.</p>
+                            </div>
+                        </div>
+                        <div class="info-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Flexible Scheduling</h4>
+                                <p>Choose a date and time that fits your schedule.</p>
+                            </div>
+                        </div>
+                        <div class="info-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Choose Your Doctor</h4>
+                                <p>Select your preferred doctor or let us match you with the best specialist.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-mini">
+                        <h4>Need Help?</h4>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>appointments@stackly.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="appointment-form-wrapper" data-aos="fade-left">
+                    <form class="appointment-form" id="appointmentForm">
+                        <h3>Fill in your details</h3>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                            <span class="form-icon"><i class="fas fa-user"></i></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                                <span class="form-icon"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                                <span class="form-icon"><i class="fas fa-phone"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="department">Department *</label>
+                                <select id="department" name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="neurology">Neurology</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="dermatology">Dermatology</option>
+                                    <option value="emergency">Emergency Care</option>
+                                </select>
+                                <span class="form-icon"><i class="fas fa-hospital"></i></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctor">Preferred Doctor</label>
+                                <select id="doctor" name="doctor">
+                                    <option value="">Select Doctor (Optional)</option>
+                                    <option value="dr-sarah">Dr. Sarah Johnson</option>
+                                    <option value="dr-michael">Dr. Michael Chen</option>
+                                    <option value="dr-emily">Dr. Emily Williams</option>
+                                    <option value="dr-james">Dr. James Anderson</option>
+                                    <option value="dr-lisa">Dr. Lisa Martinez</option>
+                                    <option value="dr-robert">Dr. Robert Taylor</option>
+                                </select>
+                                <span class="form-icon"><i class="fas fa-user-md"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date *</label>
+                                <input type="date" id="date" name="date" required>
+                                <span class="form-icon"><i class="fas fa-calendar"></i></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time *</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="09:30">09:30 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="14:30">02:30 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="15:30">03:30 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="16:30">04:30 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                                <span class="form-icon"><i class="fas fa-clock"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Additional Notes</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe your symptoms or concerns (optional)..."></textarea>
+                            <span class="form-icon"><i class="fas fa-comment"></i></span>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#60A5FA" stroke-width="3"/>
+                    <path d="M30 50 L45 65 L70 35" stroke="#60A5FA" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>Appointment Booked Successfully!</h3>
+            <p>Thank you for choosing Stackly Health Center. We will contact you shortly to confirm your appointment details.</p>
+            <button class="btn btn-primary" id="closeModal">
+                <span>Close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <span class="newsletter-badge"><i class="fas fa-envelope"></i> Stay Updated</span>
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest health tips, medical news, and exclusive updates delivered straight to your inbox.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+            <div class="newsletter-features" data-aos="fade-up" data-aos-delay="100">
+                <div class="newsletter-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>No Spam, Ever</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Weekly Digest</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Health Tips</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="#0F172A"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
+                    </a>
+                    <p class="footer-description">
+                        Dedicated to providing exceptional healthcare services with compassion, 
+                        innovation, and excellence.
+                    </p>
+                    <div class="social-links">
+                        <a href="../404.html" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="../404.html" class="social-link"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="../404.html" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="../404.html" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                            <li><a href="appointment.html">Book Appointment</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="services.html">Emergency Care</a></li>
+                            <li><a href="services.html">Cardiology</a></li>
+                            <li><a href="services.html">Neurology</a></li>
+                            <li><a href="services.html">Orthopedics</a></li>
+                            <li><a href="services.html">Pediatrics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Health Avenue, Medical District<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Main: +1 (555) 123-4567<br>Emergency: +1 (555) 911-0000</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@stackly.com<br>support@stackly.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Working Hours</h4>
+                        <ul class="working-hours">
+                            <li><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></li>
+                            <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                            <li><span>Sunday</span><span>10:00 AM - 2:00 PM</span></li>
+                            <li><span>Emergency</span><span class="emergency-badge">24/7 Available</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stackly Health Center. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/appointment.js"></script>
+</body>
+</html>

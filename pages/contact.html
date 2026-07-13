@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stackly Health Center</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="doctors.html" class="nav-link">Doctors</a>
+                <a href="appointment.html" class="nav-link">Appointment</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="login.html" class="nav-link nav-login-mobile">Login</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm nav-login-desktop">
+                    <span>Login</span>
+                </a>
+                <button class="btn-emergency">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Emergency: 911</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Reach out to us with any questions or concerns.</p>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Contact Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Cards Section -->
+    <section class="contact-cards-section">
+        <div class="container">
+            <div class="contact-cards-grid">
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Visit Us</h4>
+                    <p>123 Health Avenue, Medical District<br>New York, NY 10001</p>
+                    <a href="https://maps.google.com" target="_blank" class="contact-card-link">
+                        <span>Get Directions</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Call Us</h4>
+                    <p>Main: +1 (555) 123-4567<br>Emergency: +1 (555) 911-0000</p>
+                    <a href="tel:+15551234567" class="contact-card-link">
+                        <span>Call Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email Us</h4>
+                    <p>Info: info@stackly.com<br>Support: support@stackly.com</p>
+                    <a href="mailto:info@stackly.com" class="contact-card-link">
+                        <span>Send Email</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Working Hours</h4>
+                    <p>Mon - Fri: 8:00 AM - 8:00 PM<br>Sat: 9:00 AM - 5:00 PM</p>
+                    <a href="appointment.html" class="contact-card-link">
+                        <span>Book Appointment</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Form + Info) -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info Side -->
+                <div class="contact-info-wrapper" data-aos="fade-right">
+                    <div class="section-badge">Get In Touch</div>
+                    <h2 class="section-title">Let's Start a Conversation</h2>
+                    <p class="contact-info-subtitle">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+
+                    <div class="contact-info-illustration">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background -->
+                            <rect width="400" height="300" fill="transparent"/>
+
+                            <!-- Envelope body -->
+                            <rect x="80" y="80" width="240" height="160" rx="12" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+                            <rect x="80" y="80" width="240" height="160" rx="12" fill="url(#envelopeGrad)"/>
+
+                            <!-- Envelope flap -->
+                            <path d="M80,80 L200,180 L320,80" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M80,80 L200,180 L320,80" fill="#DBEAFE" opacity="0.6"/>
+
+                            <!-- Envelope inner lines -->
+                            <line x1="120" y1="210" x2="280" y2="210" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                            <line x1="140" y1="225" x2="260" y2="225" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+                            <!-- Paper peeking out -->
+                            <rect x="110" y="55" width="180" height="100" rx="8" fill="#ffffff" stroke="#BFDBFE" stroke-width="1.5"/>
+                            <line x1="135" y1="80" x2="265" y2="80" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="135" y1="100" x2="240" y2="100" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                            <line x1="135" y1="120" x2="220" y2="120" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+                            <!-- Speech bubble -->
+                            <g transform="translate(290, 30)">
+                                <rect x="0" y="0" width="80" height="55" rx="10" fill="#2563EB"/>
+                                <polygon points="10,55 20,75 30,55" fill="#2563EB"/>
+                                <text x="40" y="22" text-anchor="middle" fill="#ffffff" font-size="10" font-family="Poppins" font-weight="600">Hi!</text>
+                                <text x="40" y="38" text-anchor="middle" fill="#ffffff" font-size="8" font-family="Poppins">We're here</text>
+                            </g>
+
+                            <!-- Floating hearts -->
+                            <g class="floating-hearts">
+                                <circle cx="50" cy="60" r="6" fill="#60A5FA" opacity="0.4">
+                                    <animate attributeName="cy" values="60;45;60" dur="3s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="350" cy="120" r="5" fill="#2563EB" opacity="0.3">
+                                    <animate attributeName="cy" values="120;105;120" dur="2.5s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="60" cy="200" r="4" fill="#93C5FD" opacity="0.5">
+                                    <animate attributeName="cy" values="200;188;200" dur="2.8s" repeatCount="indefinite"/>
+                                </circle>
+                            </g>
+
+                            <!-- Cursor / pen -->
+                            <g transform="translate(55, 180) rotate(-30)">
+                                <rect x="0" y="0" width="8" height="40" rx="2" fill="#2563EB"/>
+                                <polygon points="0,40 8,40 4,52" fill="#1F2937"/>
+                                <rect x="0" y="0" width="8" height="6" rx="2" fill="#60A5FA"/>
+                            </g>
+
+                            <defs>
+                                <linearGradient id="envelopeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#EFF6FF;stop-opacity:0.9"/>
+                                    <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:0.9"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <div class="contact-info-features">
+                        <div class="contact-info-feature">
+                            <div class="contact-info-feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-feature-text">
+                                <h5>24/7 Support</h5>
+                                <p>Round the clock assistance for all your queries.</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-feature">
+                            <div class="contact-info-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="contact-info-feature-text">
+                                <h5>100% Confidential</h5>
+                                <p>Your information is secure and never shared.</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-feature">
+                            <div class="contact-info-feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="contact-info-feature-text">
+                                <h5>Expert Team</h5>
+                                <p>Professional staff ready to help you anytime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <div class="form-header">
+                        <h3>Send Us a Message</h3>
+                        <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="contactName" required placeholder="Enter your full name">
+                                <span class="form-icon"><i class="fas fa-user"></i></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required placeholder="your@email.com">
+                                <span class="form-icon"><i class="fas fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="contactSubject">Subject *</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required placeholder="How can we help you?">
+                            <span class="form-icon"><i class="fas fa-tag"></i></span>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="6" required placeholder="Write your message here..."></textarea>
+                            <span class="form-icon"><i class="fas fa-comment"></i></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map Section -->
+    <section class="google-map-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Find Us</span>
+                <h2 class="section-title">Our Location</h2>
+                <p class="section-description">Conveniently located in the heart of the Medical District with easy access to public transport and free parking.</p>
+            </div>
+        </div>
+        <div class="google-map-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343!2d-73.99051268459418!3d40.74095777932764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle%20New%20York!5e0!3m2!1sen!2sus!4v1635959562000!5m2!1sen!2sus"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay-card" data-aos="fade-right" data-aos-delay="300">
+                <div class="map-overlay-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h4>Stackly Health Center</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Health Avenue, Medical District, NY 10001</p>
+                <div class="map-overlay-hours">
+                    <span class="hours-label">Hours:</span>
+                    <span class="hours-time">Mon-Fri: 8AM-8PM</span>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fas fa-directions"></i>
+                    <span>Get Directions</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact FAQ -->
+    <section class="contact-faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Common Questions</h2>
+                <p class="section-description">Quick answers to questions you may have about contacting us.</p>
+            </div>
+            <div class="contact-faq-grid">
+                <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-faq-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>What is your response time?</h4>
+                    <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, we recommend calling our phone line directly.</p>
+                </div>
+                <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-faq-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h4>Can I schedule a visit in advance?</h4>
+                    <p>Yes, you can schedule appointments up to 30 days in advance through our online booking system or by calling our reception desk.</p>
+                </div>
+                <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-faq-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h4>Do I need a referral?</h4>
+                    <p>Most specialists do not require a referral. However, some insurance plans may require one. Please check with your insurance provider before your visit.</p>
+                </div>
+                <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-faq-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h4>What documents should I bring?</h4>
+                    <p>Please bring a valid photo ID, insurance card, any previous medical records, a list of current medications, and referral letters if applicable.</p>
+                </div>
+                <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="contact-faq-icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <h4>Is there someone available to assist with language?</h4>
+                    <p>Yes, we have multilingual staff and translation services available in Spanish, Mandarin, French, and Arabic to assist non-English speaking patients.</p>
+                </div>
+                <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="contact-faq-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h4>Are your facilities wheelchair accessible?</h4>
+                    <p>Absolutely. All our facilities are fully ADA compliant with wheelchair ramps, elevators, accessible restrooms, and designated parking spaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Locations -->
+    <section class="locations-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Locations</span>
+                <h2 class="section-title">Find Us Nearby</h2>
+                <p class="section-description">We have multiple convenient locations to serve you better.</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="location-main">
+                        <div class="location-badge">Main</div>
+                        <h4>Downtown Medical Center</h4>
+                        <p class="location-address"><i class="fas fa-map-marker-alt"></i> 123 Health Avenue, Medical District, NY 10001</p>
+                        <div class="location-details">
+                            <div class="location-detail">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Fri: 8AM-8PM | Sat: 9AM-5PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-departments">
+                        <span>Cardiology</span>
+                        <span>Neurology</span>
+                        <span>Orthopedics</span>
+                        <span>Emergency</span>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="location-main">
+                        <h4>Westside Health Plaza</h4>
+                        <p class="location-address"><i class="fas fa-map-marker-alt"></i> 456 Wellness Blvd, West Side, NY 10024</p>
+                        <div class="location-details">
+                            <div class="location-detail">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (555) 234-5678</span>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-departments">
+                        <span>Pediatrics</span>
+                        <span>Dermatology</span>
+                        <span>General Practice</span>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="location-main">
+                        <h4>Eastgate Specialty Clinic</h4>
+                        <p class="location-address"><i class="fas fa-map-marker-alt"></i> 789 East 42nd Street, Eastgate, NY 10017</p>
+                        <div class="location-details">
+                            <div class="location-detail">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (555) 345-6789</span>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Fri: 8AM-7PM | Sat: 9AM-4PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-departments">
+                        <span>Oncology</span>
+                        <span>Ophthalmology</span>
+                        <span>Nephrology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#60A5FA" stroke-width="3"/>
+                    <path d="M30 50 L45 65 L70 35" stroke="#60A5FA" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out to Stackly Health Center. Our team will review your message and get back to you within 24 hours.</p>
+            <button class="btn btn-primary" id="closeModal">
+                <span>Close</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <span class="newsletter-badge"><i class="fas fa-envelope"></i> Stay Updated</span>
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest health tips, medical news, and exclusive updates delivered straight to your inbox.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+            <div class="newsletter-features" data-aos="fade-up" data-aos-delay="100">
+                <div class="newsletter-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>No Spam, Ever</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Weekly Digest</span>
+                </div>
+                <div class="newsletter-feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Health Tips</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="#0F172A"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
+                    </a>
+                    <p class="footer-description">
+                        Dedicated to providing exceptional healthcare services with compassion, 
+                        innovation, and excellence.
+                    </p>
+                    <div class="social-links">
+                        <a href="../404.html" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="../404.html" class="social-link"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="../404.html" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="../404.html" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="doctors.html">Our Doctors</a></li>
+                            <li><a href="appointment.html">Book Appointment</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="services.html">Emergency Care</a></li>
+                            <li><a href="services.html">Cardiology</a></li>
+                            <li><a href="services.html">Neurology</a></li>
+                            <li><a href="services.html">Orthopedics</a></li>
+                            <li><a href="services.html">Pediatrics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Health Avenue, Medical District<br>New York, NY 10001</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Main: +1 (555) 123-4567<br>Emergency: +1 (555) 911-0000</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@stackly.com<br>support@stackly.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Working Hours</h4>
+                        <ul class="working-hours">
+                            <li><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></li>
+                            <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                            <li><span>Sunday</span><span>10:00 AM - 2:00 PM</span></li>
+                            <li><span>Emergency</span><span class="emergency-badge">24/7 Available</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stackly Health Center. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

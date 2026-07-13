@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Stackly Health Center</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>body{background:#F1F5F9;}</style>
+</head>
+<body class="dashboard-page">
+
+<!-- Sidebar Overlay (mobile) -->
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <a href="../index.html"><img src="../images/logo.webp" alt="Stackly" class="sidebar-logo"></a>
+        <span class="sidebar-brand">Stack<span>ly</span></span>
+    </div>
+    <span class="sidebar-role" style="margin:12px 22px 0;display:inline-block;">Administrator</span>
+
+    <nav class="sidebar-nav">
+        <div class="sidebar-label">Main</div>
+        <a class="sidebar-link active" data-section="overview" href="#"><i class="fas fa-th-large"></i> Dashboard</a>
+        <a class="sidebar-link" data-section="appointments-section" href="#"><i class="fas fa-calendar-check"></i> Appointments <span class="badge">12</span></a>
+        <a class="sidebar-link" data-section="patients-section" href="#"><i class="fas fa-users"></i> Patients</a>
+        <a class="sidebar-link" data-section="doctors-section" href="#"><i class="fas fa-user-md"></i> Doctors</a>
+        <a class="sidebar-link" data-section="departments-section" href="#"><i class="fas fa-hospital"></i> Departments</a>
+
+        <div class="sidebar-label">Clinical</div>
+        <a class="sidebar-link" data-section="records-section" href="#"><i class="fas fa-file-medical"></i> Medical Records</a>
+        <a class="sidebar-link" data-section="billing-section" href="#"><i class="fas fa-file-invoice-dollar"></i> Billing & Payments</a>
+
+        <div class="sidebar-label">Tools</div>
+        <a class="sidebar-link" data-section="calendar-section" href="#"><i class="fas fa-calendar-alt"></i> Calendar</a>
+        <a class="sidebar-link" data-section="reports-section" href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+        <a class="sidebar-link" data-section="settings-section" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="sidebar-user">
+            <div class="sidebar-avatar">AD</div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name">Dr. Admin</div>
+                <div class="sidebar-user-role">Super Admin</div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="dashboard-main">
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+            <div class="topbar-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search patients, doctors...">
+            </div>
+        </div>
+        <div class="topbar-right" style="position:relative;">
+            <button class="topbar-icon"><i class="fas fa-expand"></i></button>
+            <div class="topbar-profile">
+                <div class="topbar-profile-avatar">AD</div>
+                <div class="topbar-profile-info">
+                    <div class="topbar-profile-name">Dr. Admin</div>
+                    <div class="topbar-profile-role">Administrator</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+
+        <!-- ===== OVERVIEW ===== -->
+        <div class="section-panel active" id="overview">
+            <div class="page-header">
+                <div>
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back, Dr. Admin. Here's what's happening today.</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Export Report</button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Total Patients</h3>
+                        <div class="stat-card-value" data-count="2847">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> 12.5%</span>
+                    </div>
+                    <div class="stat-card-icon blue"><i class="fas fa-users"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Doctors</h3>
+                        <div class="stat-card-value" data-count="48">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> 4.2%</span>
+                    </div>
+                    <div class="stat-card-icon green"><i class="fas fa-user-md"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Appointments</h3>
+                        <div class="stat-card-value" data-count="156">0</div>
+                        <span class="stat-card-change down"><i class="fas fa-arrow-down"></i> 3.1%</span>
+                    </div>
+                    <div class="stat-card-icon purple"><i class="fas fa-calendar-check"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Revenue</h3>
+                        <div class="stat-card-value" data-prefix="$" data-count="48500">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> 8.7%</span>
+                    </div>
+                    <div class="stat-card-icon orange"><i class="fas fa-dollar-sign"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-info">
+                        <h3>Departments</h3>
+                        <div class="stat-card-value" data-count="12">0</div>
+                        <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> 1</span>
+                    </div>
+                    <div class="stat-card-icon teal"><i class="fas fa-hospital"></i></div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Appointments Overview</h3>
+                        <div class="chart-filters">
+                            <button class="chart-filter active">Week</button>
+                            <button class="chart-filter">Month</button>
+                            <button class="chart-filter">Year</button>
+                        </div>
+                    </div>
+                    <div class="chart-body"><canvas id="appointmentsChart"></canvas></div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Monthly Revenue</h3>
+                        <div class="chart-filters">
+                            <button class="chart-filter active">6M</button>
+                            <button class="chart-filter">1Y</button>
+                        </div>
+                    </div>
+                    <div class="chart-body"><canvas id="revenueChart"></canvas></div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header"><h3>Patient Growth</h3></div>
+                    <div class="chart-body"><canvas id="patientGrowthChart"></canvas></div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header"><h3>Department Statistics</h3></div>
+                    <div class="chart-body"><canvas id="departmentChart"></canvas></div>
+                </div>
+            </div>
+
+            <!-- Recent Appointments Table -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>Recent Appointments</h3>
+                    <div class="table-actions">
+                        <div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div>
+                        <select class="table-filter"><option>All Status</option><option>Confirmed</option><option>Pending</option><option>Cancelled</option></select>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-blue">SJ</div><div><div class="user-name">Sarah Johnson</div><div class="user-email">sarah@email.com</div></div></div></td><td>Dr. Smith</td><td>Jan 15, 2025</td><td>10:00 AM</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button> <button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-green">MB</div><div><div class="user-name">Michael Brown</div><div class="user-email">michael@email.com</div></div></div></td><td>Dr. Williams</td><td>Jan 15, 2025</td><td>11:30 AM</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button> <button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-purple">EW</div><div><div class="user-name">Emily Wilson</div><div class="user-email">emily@email.com</div></div></div></td><td>Dr. Chen</td><td>Jan 14, 2025</td><td>02:00 PM</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button> <button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-orange">JD</div><div><div class="user-name">James Davis</div><div class="user-email">james@email.com</div></div></div></td><td>Dr. Martinez</td><td>Jan 14, 2025</td><td>03:30 PM</td><td><span class="status-badge cancelled"><span class="status-dot"></span>Cancelled</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button> <button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-pink">LT</div><div><div class="user-name">Lisa Thompson</div><div class="user-email">lisa@email.com</div></div></div></td><td>Dr. Johnson</td><td>Jan 13, 2025</td><td>09:00 AM</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button> <button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination">
+                    <span>Showing 1-5 of 156 appointments</span>
+                    <div class="pagination-btns">
+                        <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">...</button>
+                        <button class="pagination-btn">32</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions & Activity -->
+            <div class="two-col-grid">
+                <div>
+                    <div class="quick-actions-grid">
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=appointments-section]').click();return false;">
+                            <div class="qa-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-calendar-plus"></i></div>
+                            <span>New Appointment</span>
+                        </a>
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=patients-section]').click();return false;">
+                            <div class="qa-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-user-plus"></i></div>
+                            <span>Add Patient</span>
+                        </a>
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=records-section]').click();return false;">
+                            <div class="qa-icon" style="background:#F3E8FF;color:#9333EA;"><i class="fas fa-file-medical"></i></div>
+                            <span>Medical Record</span>
+                        </a>
+                        <a class="quick-action-btn" href="#" onclick="document.querySelector('[data-section=billing-section]').click();return false;">
+                            <div class="qa-icon" style="background:#FFF7ED;color:#EA580C;"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <span>New Invoice</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-clock"></i> Activity Timeline</h4>
+                    <ul class="activity-list">
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-calendar-check"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Appointment confirmed</strong> with Sarah Johnson</div>
+                                <div class="activity-time">5 minutes ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-user-plus"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>New patient</strong> Michael Brown registered</div>
+                                <div class="activity-time">23 minutes ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#FEF3C7;color:#D97706;"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Invoice #1245</strong> paid by Emily Wilson</div>
+                                <div class="activity-time">1 hour ago</div>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <div class="activity-icon" style="background:#F3E8FF;color:#9333EA;"><i class="fas fa-comment"></i></div>
+                            <div class="activity-content">
+                                <div class="activity-text"><strong>Message</strong> from Dr. Williams regarding lab results</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== APPOINTMENTS ===== -->
+        <div class="section-panel" id="appointments-section">
+            <div class="page-header">
+                <div><h1>Appointment Management</h1><p>View and manage all patient appointments</p></div>
+                <div class="page-actions"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> New Appointment</button></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Today's</h3><div class="stat-card-value" data-count="24">0</div></div><div class="stat-card-icon blue"><i class="fas fa-calendar-day"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>This Week</h3><div class="stat-card-value" data-count="156">0</div></div><div class="stat-card-icon purple"><i class="fas fa-calendar-week"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Pending</h3><div class="stat-card-value" data-count="18">0</div></div><div class="stat-card-icon orange"><i class="fas fa-clock"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Completed</h3><div class="stat-card-value" data-count="132">0</div></div><div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Appointments</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search..."></div><select class="table-filter"><option>All Status</option><option>Confirmed</option><option>Pending</option><option>Cancelled</option><option>Completed</option></select></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Department</th><th>Date</th><th>Time</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#APT-001</td><td><div class="user-cell"><div class="user-avatar bg-blue">SJ</div><div><div class="user-name">Sarah Johnson</div></div></div></td><td>Dr. Smith</td><td>Cardiology</td><td>Jan 15</td><td>10:00</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button><button class="table-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+                            <tr><td>#APT-002</td><td><div class="user-cell"><div class="user-avatar bg-green">MB</div><div><div class="user-name">Michael Brown</div></div></div></td><td>Dr. Williams</td><td>Neurology</td><td>Jan 15</td><td>11:30</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button><button class="table-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+                            <tr><td>#APT-003</td><td><div class="user-cell"><div class="user-avatar bg-purple">EW</div><div><div class="user-name">Emily Wilson</div></div></div></td><td>Dr. Chen</td><td>Pediatrics</td><td>Jan 14</td><td>14:00</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Confirmed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button><button class="table-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+                            <tr><td>#APT-004</td><td><div class="user-cell"><div class="user-avatar bg-orange">JD</div><div><div class="user-name">James Davis</div></div></div></td><td>Dr. Martinez</td><td>Orthopedics</td><td>Jan 14</td><td>15:30</td><td><span class="status-badge cancelled"><span class="status-dot"></span>Cancelled</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button><button class="table-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+                            <tr><td>#APT-005</td><td><div class="user-cell"><div class="user-avatar bg-pink">LT</div><div><div class="user-name">Lisa Thompson</div></div></div></td><td>Dr. Johnson</td><td>Dermatology</td><td>Jan 13</td><td>09:00</td><td><span class="status-badge completed"><span class="status-dot"></span>Completed</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button><button class="table-btn delete"><i class="fas fa-trash"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination"><span>Showing 1-5 of 156</span><div class="pagination-btns"><button class="pagination-btn"><i class="fas fa-chevron-left"></i></button><button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn"><i class="fas fa-chevron-right"></i></button></div></div>
+            </div>
+        </div>
+
+        <!-- ===== PATIENTS ===== -->
+        <div class="section-panel" id="patients-section">
+            <div class="page-header">
+                <div><h1>Patient Management</h1><p>Manage all registered patients</p></div>
+                <div class="page-actions"><button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Add Patient</button></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total</h3><div class="stat-card-value" data-count="2847">0</div></div><div class="stat-card-icon blue"><i class="fas fa-users"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Active</h3><div class="stat-card-value" data-count="2654">0</div></div><div class="stat-card-icon green"><i class="fas fa-user-check"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>New This Month</h3><div class="stat-card-value" data-count="142">0</div></div><div class="stat-card-icon purple"><i class="fas fa-user-plus"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Inactive</h3><div class="stat-card-value" data-count="193">0</div></div><div class="stat-card-icon orange"><i class="fas fa-user-clock"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Patients</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search patients..."></div></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Patient</th><th>Age</th><th>Gender</th><th>Phone</th><th>Last Visit</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-blue">SJ</div><div><div class="user-name">Sarah Johnson</div><div class="user-email">sarah@email.com</div></div></div></td><td>34</td><td>Female</td><td>(555) 123-4567</td><td>Jan 10, 2025</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-green">MB</div><div><div class="user-name">Michael Brown</div><div class="user-email">michael@email.com</div></div></div></td><td>45</td><td>Male</td><td>(555) 234-5678</td><td>Jan 12, 2025</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-purple">EW</div><div><div class="user-name">Emily Wilson</div><div class="user-email">emily@email.com</div></div></div></td><td>28</td><td>Female</td><td>(555) 345-6789</td><td>Jan 8, 2025</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-orange">JD</div><div><div class="user-name">James Davis</div><div class="user-email">james@email.com</div></div></div></td><td>52</td><td>Male</td><td>(555) 456-7890</td><td>Dec 20, 2024</td><td><span class="status-badge inactive"><span class="status-dot"></span>Inactive</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-pink">LT</div><div><div class="user-name">Lisa Thompson</div><div class="user-email">lisa@email.com</div></div></div></td><td>31</td><td>Female</td><td>(555) 567-8901</td><td>Jan 13, 2025</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination"><span>Showing 1-5 of 2,847</span><div class="pagination-btns"><button class="pagination-btn"><i class="fas fa-chevron-left"></i></button><button class="pagination-btn active">1</button><button class="pagination-btn">2</button><button class="pagination-btn">3</button><button class="pagination-btn"><i class="fas fa-chevron-right"></i></button></div></div>
+            </div>
+        </div>
+
+        <!-- ===== DOCTORS ===== -->
+        <div class="section-panel" id="doctors-section">
+            <div class="page-header">
+                <div><h1>Doctor Management</h1><p>Manage all doctors and their schedules</p></div>
+                <div class="page-actions"><button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Add Doctor</button></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Doctors</h3><div class="stat-card-value" data-count="48">0</div></div><div class="stat-card-icon blue"><i class="fas fa-user-md"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Available Today</h3><div class="stat-card-value" data-count="32">0</div></div><div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>On Leave</h3><div class="stat-card-value" data-count="4">0</div></div><div class="stat-card-icon orange"><i class="fas fa-plane"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Doctors</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search doctors..."></div><select class="table-filter"><option>All Departments</option><option>Cardiology</option><option>Neurology</option><option>Pediatrics</option><option>Orthopedics</option></select></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Doctor</th><th>Specialty</th><th>Department</th><th>Patients</th><th>Rating</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-blue">RS</div><div><div class="user-name">Dr. Robert Smith</div><div class="user-email">robert@stackly.com</div></div></div></td><td>Cardiologist</td><td>Cardiology</td><td>245</td><td><i class="fas fa-star" style="color:#F59E0B;"></i> 4.9</td><td><span class="status-badge active"><span class="status-dot"></span>Available</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-green">MC</div><div><div class="user-name">Dr. Michael Chen</div><div class="user-email">michael@stackly.com</div></div></div></td><td>Neurologist</td><td>Neurology</td><td>198</td><td><i class="fas fa-star" style="color:#F59E0B;"></i> 4.8</td><td><span class="status-badge active"><span class="status-dot"></span>Available</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-purple">EW</div><div><div class="user-name">Dr. Emily Williams</div><div class="user-email">emily@stackly.com</div></div></div></td><td>Pediatrician</td><td>Pediatrics</td><td>312</td><td><i class="fas fa-star" style="color:#F59E0B;"></i> 4.9</td><td><span class="status-badge inactive"><span class="status-dot"></span>On Leave</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><div class="user-cell"><div class="user-avatar bg-orange">JM</div><div><div class="user-name">Dr. James Martinez</div><div class="user-email">james@stackly.com</div></div></div></td><td>Orthopedic Surgeon</td><td>Orthopedics</td><td>176</td><td><i class="fas fa-star" style="color:#F59E0B;"></i> 4.7</td><td><span class="status-badge active"><span class="status-dot"></span>Available</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DEPARTMENTS ===== -->
+        <div class="section-panel" id="departments-section">
+            <div class="page-header">
+                <div><h1>Department Management</h1><p>Overview of all hospital departments</p></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Departments</h3><div class="stat-card-value" data-count="12">0</div></div><div class="stat-card-icon blue"><i class="fas fa-hospital"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Staff</h3><div class="stat-card-value" data-count="320">0</div></div><div class="stat-card-icon green"><i class="fas fa-users"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>All Departments</h3></div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Department</th><th>Head</th><th>Doctors</th><th>Patients</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Cardiology</strong></td><td>Dr. Robert Smith</td><td>8</td><td>456</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><strong>Neurology</strong></td><td>Dr. Michael Chen</td><td>6</td><td>321</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><strong>Pediatrics</strong></td><td>Dr. Emily Williams</td><td>7</td><td>534</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><strong>Orthopedics</strong></td><td>Dr. James Martinez</td><td>5</td><td>289</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                            <tr><td><strong>Dermatology</strong></td><td>Dr. Sarah Johnson</td><td>4</td><td>198</td><td><span class="status-badge active"><span class="status-dot"></span>Active</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-pen"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MEDICAL RECORDS ===== -->
+        <div class="section-panel" id="records-section">
+            <div class="page-header">
+                <div><h1>Medical Records</h1><p>View and manage patient medical records</p></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Records</h3><div class="stat-card-value" data-count="8432">0</div></div><div class="stat-card-icon blue"><i class="fas fa-file-medical"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>This Month</h3><div class="stat-card-value" data-count="342">0</div></div><div class="stat-card-icon green"><i class="fas fa-calendar"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>Recent Records</h3>
+                    <div class="table-actions"><div class="table-search"><i class="fas fa-search"></i><input type="text" placeholder="Search records..."></div></div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Record ID</th><th>Patient</th><th>Doctor</th><th>Type</th><th>Date</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#MED-2841</td><td><div class="user-cell"><div class="user-avatar bg-blue">SJ</div><div><div class="user-name">Sarah Johnson</div></div></div></td><td>Dr. Smith</td><td>Lab Report</td><td>Jan 14, 2025</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-2840</td><td><div class="user-cell"><div class="user-avatar bg-green">MB</div><div><div class="user-name">Michael Brown</div></div></div></td><td>Dr. Chen</td><td>Prescription</td><td>Jan 13, 2025</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                            <tr><td>#MED-2839</td><td><div class="user-cell"><div class="user-avatar bg-purple">EW</div><div><div class="user-name">Emily Wilson</div></div></div></td><td>Dr. Williams</td><td>Diagnosis</td><td>Jan 12, 2025</td><td><button class="table-btn view"><i class="fas fa-eye"></i></button><button class="table-btn edit"><i class="fas fa-download"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BILLING ===== -->
+        <div class="section-panel" id="billing-section">
+            <div class="page-header">
+                <div><h1>Billing & Payments</h1><p>Manage invoices and track payments</p></div>
+                <div class="page-actions"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create Invoice</button></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Total Revenue</h3><div class="stat-card-value" data-prefix="$" data-count="485000">0</div></div><div class="stat-card-icon green"><i class="fas fa-dollar-sign"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Pending</h3><div class="stat-card-value" data-prefix="$" data-count="23400">0</div></div><div class="stat-card-icon orange"><i class="fas fa-hourglass-half"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Overdue</h3><div class="stat-card-value" data-prefix="$" data-count="8200">0</div></div><div class="stat-card-icon red"><i class="fas fa-exclamation-circle"></i></div></div>
+            </div>
+            <div class="table-card">
+                <div class="table-header"><h3>Recent Invoices</h3></div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>Invoice</th><th>Patient</th><th>Amount</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody>
+                            <tr><td>#INV-1245</td><td>Sarah Johnson</td><td>$450.00</td><td>Jan 14</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#INV-1244</td><td>Michael Brown</td><td>$280.00</td><td>Jan 13</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                            <tr><td>#INV-1243</td><td>Emily Wilson</td><td>$320.00</td><td>Jan 12</td><td><span class="status-badge confirmed"><span class="status-dot"></span>Paid</span></td><td><button class="table-btn view"><i class="fas fa-eye"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CALENDAR ===== -->
+        <div class="section-panel" id="calendar-section">
+            <div class="page-header"><div><h1>Calendar</h1><p>View and manage your schedule</p></div></div>
+            <div class="two-col-grid">
+                <div class="mini-calendar">
+                    <div class="calendar-header">
+                        <h3 class="calendar-month-label">January 2025</h3>
+                        <div class="calendar-nav"><button class="cal-prev"><i class="fas fa-chevron-left"></i></button><button class="cal-next"><i class="fas fa-chevron-right"></i></button></div>
+                    </div>
+                    <div class="calendar-grid"></div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-clock"></i> Today's Schedule</h4>
+                    <ul class="activity-list">
+                        <li class="activity-item"><div class="activity-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-calendar-check"></i></div><div class="activity-content"><div class="activity-text"><strong>10:00 AM</strong> - Consultation with Sarah Johnson</div><div class="activity-time">Cardiology</div></div></li>
+                        <li class="activity-item"><div class="activity-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-stethoscope"></i></div><div class="activity-content"><div class="activity-text"><strong>11:30 AM</strong> - Follow-up with Michael Brown</div><div class="activity-time">Neurology</div></div></li>
+                        <li class="activity-item"><div class="activity-icon" style="background:#FEF3C7;color:#D97706;"><i class="fas fa-users"></i></div><div class="activity-content"><div class="activity-text"><strong>2:00 PM</strong> - Staff meeting</div><div class="activity-time">Conference Room A</div></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== REPORTS ===== -->
+        <div class="section-panel" id="reports-section">
+            <div class="page-header"><div><h1>Reports & Analytics</h1><p>Download and view detailed reports</p></div></div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-card-info"><h3>Reports Generated</h3><div class="stat-card-value" data-count="156">0</div></div><div class="stat-card-icon blue"><i class="fas fa-file-alt"></i></div></div>
+                <div class="stat-card"><div class="stat-card-info"><h3>Downloads</h3><div class="stat-card-value" data-count="89">0</div></div><div class="stat-card-icon green"><i class="fas fa-download"></i></div></div>
+            </div>
+            <div class="quick-actions-grid">
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#EFF6FF;color:#2563EB;"><i class="fas fa-file-pdf"></i></div><span>Revenue Report</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#D1FAE5;color:#059669;"><i class="fas fa-file-pdf"></i></div><span>Patient Report</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#F3E8FF;color:#9333EA;"><i class="fas fa-file-pdf"></i></div><span>Appointment Report</span></a>
+                <a class="quick-action-btn" href="#"><div class="qa-icon" style="background:#FFF7ED;color:#EA580C;"><i class="fas fa-file-pdf"></i></div><span>Inventory Report</span></a>
+            </div>
+        </div>
+
+        <!-- ===== SETTINGS ===== -->
+        <div class="section-panel" id="settings-section">
+            <div class="page-header"><div><h1>Profile & Settings</h1><p>Manage your account settings</p></div></div>
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <h4><i class="fas fa-user"></i> Profile Information</h4>
+                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value">Dr. Admin</span></div>
+                    <div class="info-row"><span class="info-row-label">Email</span><span class="info-row-value">admin@stackly.com</span></div>
+                    <div class="info-row"><span class="info-row-label">Phone</span><span class="info-row-value">(555) 000-0001</span></div>
+                    <div class="info-row"><span class="info-row-label">Role</span><span class="info-row-value">Super Administrator</span></div>
+                    <div class="info-row"><span class="info-row-label">Department</span><span class="info-row-value">Administration</span></div>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-shield-alt"></i> Security</h4>
+                    <div class="info-row"><span class="info-row-label">Password</span><span class="info-row-value"><a href="#" style="color:#2563EB;">Change Password</a></span></div>
+                    <div class="info-row"><span class="info-row-label">Two-Factor Auth</span><span class="info-row-value" style="color:#059669;">Enabled</span></div>
+                    <div class="info-row"><span class="info-row-label">Last Login</span><span class="info-row-value">Jan 15, 2025 09:00 AM</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="../js/dashboard.js"></script>
+<script>
+function initAdminCharts(){
+    const chartDefaults={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,grid:{color:'#F1F5F9'}}}};
+
+    new Chart(document.getElementById('appointmentsChart'),{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{label:'Appointments',data:[24,28,22,32,26,18,12],borderColor:'#2563EB',backgroundColor:'rgba(37,99,235,0.08)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#2563EB',borderWidth:2.5}]},options:chartDefaults});
+
+    new Chart(document.getElementById('revenueChart'),{type:'bar',data:{labels:['Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{label:'Revenue',data:[38000,42000,39000,48000,45000,52000],backgroundColor:'rgba(37,99,235,0.85)',borderRadius:8,barThickness:28}]},options:chartDefaults});
+
+    new Chart(document.getElementById('patientGrowthChart'),{type:'line',data:{labels:['Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{label:'Patients',data:[2100,2250,2380,2520,2680,2847],borderColor:'#10B981',backgroundColor:'rgba(16,185,129,0.08)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#10B981',borderWidth:2.5}]},options:chartDefaults});
+
+    new Chart(document.getElementById('departmentChart'),{type:'doughnut',data:{labels:['Cardiology','Neurology','Pediatrics','Orthopedics','Dermatology','Other'],datasets:[{data:[25,18,22,15,10,10],backgroundColor:['#2563EB','#10B981','#8B5CF6','#F59E0B','#EC4899','#6B7280'],borderWidth:0,hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{padding:16,usePointStyle:true,pointStyle:'circle',font:{size:12,family:'Poppins'}}}}}});
+}
+</script>
+</body>
+</html>
