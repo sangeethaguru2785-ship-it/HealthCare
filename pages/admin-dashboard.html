@@ -20,7 +20,6 @@
 <aside class="sidebar">
     <div class="sidebar-header">
         <a href="../index.html"><img src="../images/logo.webp" alt="Stackly" class="sidebar-logo"></a>
-        <span class="sidebar-brand">Stack<span>ly</span></span>
     </div>
     <span class="sidebar-role" style="margin:12px 22px 0;display:inline-block;">Administrator</span>
 
@@ -43,35 +42,22 @@
     </nav>
 
     <div class="sidebar-footer">
-        <div class="sidebar-user">
-            <div class="sidebar-avatar">AD</div>
-            <div class="sidebar-user-info">
-                <div class="sidebar-user-name">Dr. Admin</div>
-                <div class="sidebar-user-role">Super Admin</div>
-            </div>
+        <div class="sidebar-actions">
+            <a href="../index.html" class="sidebar-action-btn"><i class="fas fa-home"></i> Go to Home</a>
+            <a href="login.html" class="sidebar-action-btn logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
     </div>
 </aside>
 
 <!-- Main Content -->
 <main class="dashboard-main">
-    <!-- Top Bar -->
-    <header class="topbar">
-        <div class="topbar-left">
-            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
-            <div class="topbar-search">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search patients, doctors...">
-            </div>
-        </div>
-        <div class="topbar-right" style="position:relative;">
-            <button class="topbar-icon"><i class="fas fa-expand"></i></button>
-            <div class="topbar-profile">
-                <div class="topbar-profile-avatar">AD</div>
-                <div class="topbar-profile-info">
-                    <div class="topbar-profile-name">Dr. Admin</div>
-                    <div class="topbar-profile-role">Administrator</div>
-                </div>
+    <header class="dashboard-topbar">
+        <div class="topbar-spacer"></div>
+        <div class="topbar-profile">
+            <div class="topbar-avatar" data-dynamic="avatar">AD</div>
+            <div class="topbar-profile-info">
+                <div class="topbar-profile-name" data-dynamic="name">Dr. Admin</div>
+                <div class="topbar-profile-role" data-dynamic="role">Super Admin</div>
             </div>
         </div>
     </header>
@@ -83,7 +69,7 @@
             <div class="page-header">
                 <div>
                     <h1>Dashboard Overview</h1>
-                    <p>Welcome back, Dr. Admin. Here's what's happening today.</p>
+                    <p>Welcome back, <span data-dynamic="welcome-name">Dr. Admin</span>. Here's what's happening today.</p>
                 </div>
                 <div class="page-actions">
                     <button class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Export Report</button>
@@ -477,8 +463,8 @@
             <div class="two-col-grid">
                 <div class="info-card">
                     <h4><i class="fas fa-user"></i> Profile Information</h4>
-                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value">Dr. Admin</span></div>
-                    <div class="info-row"><span class="info-row-label">Email</span><span class="info-row-value">admin@stackly.com</span></div>
+                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value" data-dynamic="settings-name">Dr. Admin</span></div>
+                    <div class="info-row"><span class="info-row-label">Email</span><span class="info-row-value" data-dynamic="settings-email">admin@stackly.com</span></div>
                     <div class="info-row"><span class="info-row-label">Phone</span><span class="info-row-value">(555) 000-0001</span></div>
                     <div class="info-row"><span class="info-row-label">Role</span><span class="info-row-value">Super Administrator</span></div>
                     <div class="info-row"><span class="info-row-label">Department</span><span class="info-row-value">Administration</span></div>

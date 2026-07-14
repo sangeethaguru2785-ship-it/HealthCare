@@ -63,42 +63,6 @@ img {
 }
 
 /* ============================================
-   Custom Cursor
-   ============================================ */
-.cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 99998;
-    transition: transform 0.1s ease, background-color 0.1s ease;
-    transform: translate(-50%, -50%);
-}
-
-.cursor-follower {
-    width: 8px;
-    height: 8px;
-    background: var(--primary-light);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 99997;
-    transition: transform 0.15s ease;
-    transform: translate(-50%, -50%);
-}
-
-.cursor.hover {
-    transform: translate(-50%, -50%) scale(1.5);
-    background-color: rgba(0, 180, 216, 0.2);
-}
-
-@media (max-width: 768px) {
-    .cursor, .cursor-follower { display: none; }
-}
-
-/* ============================================
    Navigation
    ============================================ */
 .navbar {
@@ -457,9 +421,28 @@ img {
    ============================================ */
 .footer {
     background: var(--bg-dark);
+    background-image: url('../images/footer.webp');
+    background-size: cover;
+    background-position: center;
     color: var(--white);
     position: relative;
     padding-top: 0;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.88);
+    z-index: 0;
+}
+
+.footer > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Newsletter Section */
@@ -579,6 +562,26 @@ img {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.8rem;
     margin-top: 15px;
+}
+
+.newsletter-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 32px;
+    background: var(--white);
+    border: 2px solid var(--success);
+    border-radius: 16px;
+    color: #065f46;
+    font-weight: 600;
+    font-size: 1.25rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.newsletter-success i {
+    font-size: 1.6rem;
+    color: var(--success);
 }
 
 .newsletter-features {
@@ -1024,4 +1027,32 @@ img {
     }
     .newsletter-features { flex-wrap: wrap; gap: 20px; }
     .newsletter-text h2 { font-size: 1.8rem; }
+}
+
+/* ============================================
+   Form Validation Styles
+   ============================================ */
+.form-group.error input {
+    border-color: var(--danger);
+}
+.form-group .error-message {
+    display: none;
+    color: var(--danger);
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+.form-group.error .error-message {
+    display: block;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }

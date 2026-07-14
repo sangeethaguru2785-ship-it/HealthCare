@@ -10,38 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="doctors.html" class="nav-link">Doctors</a>
-                <a href="appointment.html" class="nav-link">Appointment</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <button class="btn-emergency">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Emergency: 911</span>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
-
     <!-- Login Section -->
     <section class="auth-section">
         <!-- Floating Shapes -->
@@ -59,13 +27,11 @@
         </div>
 
         <div class="auth-container">
-            <!-- Header -->
-            <div class="auth-header">
-                <a href="../index.html" class="auth-logo">
+            <!-- Logo -->
+            <div class="auth-logo">
+                <a href="../index.html">
                     <img src="../images/logo.webp" alt="Stackly Health Center" class="logo-image">
                 </a>
-                <h1>Welcome Back</h1>
-                <p>Sign in to access your healthcare dashboard</p>
             </div>
 
             <!-- Role Selection -->
@@ -118,7 +84,7 @@
                     <label class="checkbox-label">
                         <input type="checkbox" id="remember">
                         <span class="checkmark"></span>
-                        Remember me
+                        <span class="checkbox-text">Remember me</span>
                     </label>
                     <a href="#" class="forgot-link">Forgot Password?</a>
                 </div>
@@ -131,15 +97,20 @@
                 <div class="auth-divider"><span>or continue with</span></div>
 
                 <div class="social-buttons">
-                    <button type="button" class="social-btn google">
+                    <button type="button" class="social-btn google" onclick="window.location.href='../404.html'">
                         <i class="fab fa-google"></i>
                         <span>Google</span>
                     </button>
-                    <button type="button" class="social-btn facebook">
+                    <button type="button" class="social-btn facebook" onclick="window.location.href='../404.html'">
                         <i class="fab fa-facebook-f"></i>
                         <span>Facebook</span>
                     </button>
                 </div>
+
+                <a href="../index.html" class="go-back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Go Back</span>
+                </a>
             </form>
 
             <div class="auth-footer">

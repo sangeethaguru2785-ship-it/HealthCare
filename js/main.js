@@ -1,28 +1,4 @@
 // ============================================
-// Custom Cursor
-// ============================================
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
-
-if (window.innerWidth > 768 && cursor && cursorFollower) {
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(() => {
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        }, 50);
-    });
-
-    const hoverElements = document.querySelectorAll('a, button, .service-card, .doctor-card, .testimonial-card, .contact-card');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
-}
-
-// ============================================
 // Navigation
 // ============================================
 const navbar = document.getElementById('navbar');
@@ -138,7 +114,64 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================
+// Emergency Button → 404 Page
+// ============================================
+const emergencyBtn = document.getElementById('emergencyBtn');
+if (emergencyBtn) {
+    emergencyBtn.addEventListener('click', () => {
+        const inPages = window.location.pathname.includes('/pages/');
+        window.location.href = inPages ? '../404.html' : '404.html';
+    });
+}
+
+// ============================================
 // Console Easter Egg
 // ============================================
 console.log('%c🏥 Stackly Health Center', 'color: #0077b6; font-size: 24px; font-weight: bold;');
 console.log('%cYour Health, Our Priority', 'color: #48cae4; font-size: 14px;');
+
+// ============================================
+// Email Input Filtering (all pages)
+// ============================================
+document.addEventListener('keydown', function (e) {
+    if (e.target.type === 'email' && e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+        if (!/^[a-zA-Z0-9@.+\-_]$/.test(e.key)) {
+            e.preventDefault();
+        }
+    }
+});
+
+// ============================================
+// Newsletter Form Handler (all pages)
+// ============================================
+document.querySelectorAll('#newsletterForm').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var input = form.querySelector('input[type="email"]');
+        var emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailRegex.test(input.value.trim())) {
+            input.focus();
+            return;
+        }
+
+        var inputGroup = form.querySelector('.newsletter-input-group');
+        var disclaimer = form.querySelector('.newsletter-disclaimer');
+
+        inputGroup.style.display = 'none';
+        if (disclaimer) disclaimer.style.display = 'none';
+
+        var successMsg = document.createElement('div');
+        successMsg.className = 'newsletter-success';
+        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Successfully Subscribed!';
+        form.appendChild(successMsg);
+
+        setTimeout(function () {
+            successMsg.remove();
+            inputGroup.style.display = '';
+            if (disclaimer) disclaimer.style.display = '';
+            form.reset();
+        }, 3000);
+    });
+});

@@ -20,11 +20,23 @@ if (contactForm) {
             return;
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
+            var emailGroup = document.getElementById('contactEmail').parentElement;
+            var errorSpan = emailGroup.querySelector('.error-message');
+            if (!errorSpan) {
+                errorSpan = document.createElement('span');
+                errorSpan.className = 'error-message';
+                errorSpan.textContent = 'Please enter a valid email address (e.g., abc@gmail.com)';
+                emailGroup.appendChild(errorSpan);
+            }
+            emailGroup.classList.add('error');
             document.getElementById('contactEmail').focus();
             return;
         }
+
+        var allGroups = contactForm.querySelectorAll('.form-group');
+        allGroups.forEach(function (g) { g.classList.remove('error'); });
 
         const submitBtn = contactForm.querySelector('.btn-submit');
         const originalContent = submitBtn.innerHTML;

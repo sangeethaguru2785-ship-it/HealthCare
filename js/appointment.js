@@ -17,7 +17,16 @@ if (dateInput) {
 if (appointmentForm) {
     appointmentForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
+        var emailInput = document.getElementById('email');
+        var email = emailInput.value.trim();
+        var emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailRegex.test(email)) {
+            emailInput.focus();
+            return;
+        }
+
         const submitBtn = appointmentForm.querySelector('.btn-submit');
         const originalContent = submitBtn.innerHTML;
         

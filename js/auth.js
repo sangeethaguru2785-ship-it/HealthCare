@@ -75,6 +75,24 @@ document.addEventListener('DOMContentLoaded', function () {
         return /^[0-9+\-\s()]{7,}$/.test(phone);
     }
 
+    function deriveNameFromEmail(email) {
+        const local = email.split('@')[0];
+        return local
+            .replace(/[._-]/g, ' ')
+            .split(' ')
+            .filter(Boolean)
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+    }
+
+    function getInitials(name) {
+        return name.split(' ').map(w => w.charAt(0)).join('').toUpperCase().slice(0, 2);
+    }
+
+    function saveUserData(name, email, role) {
+        localStorage.setItem('stacklyUser', JSON.stringify({ name, email, role }));
+    }
+
     function showFieldError(input, message) {
         input.classList.add('error');
         const errorEl = input.closest('.form-group').querySelector('.error-message');
@@ -123,6 +141,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (!valid) return;
+
+            const userName = deriveNameFromEmail(email.value.trim());
+            saveUserData(userName, email.value.trim(), selectedRole);
 
             showSuccessModal('login', selectedRole);
         });
@@ -201,6 +222,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (!valid) return;
+
+            const signupName = firstName.value.trim() + ' ' + lastName.value.trim();
+            saveUserData(signupName, email.value.trim(), selectedRole);
 
             showSuccessModal('signup', selectedRole);
         });

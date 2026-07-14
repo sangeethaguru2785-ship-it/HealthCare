@@ -20,7 +20,6 @@
 <aside class="sidebar">
     <div class="sidebar-header">
         <a href="../index.html"><img src="../images/logo.webp" alt="Stackly" class="sidebar-logo"></a>
-        <span class="sidebar-brand">Stack<span>ly</span></span>
     </div>
     <span class="sidebar-role" style="margin:12px 22px 0;display:inline-block;">Patient</span>
 
@@ -44,35 +43,22 @@
     </nav>
 
     <div class="sidebar-footer">
-        <div class="sidebar-user">
-            <div class="sidebar-avatar">SJ</div>
-            <div class="sidebar-user-info">
-                <div class="sidebar-user-name">Sarah Johnson</div>
-                <div class="sidebar-user-role">Patient</div>
-            </div>
+        <div class="sidebar-actions">
+            <a href="../index.html" class="sidebar-action-btn"><i class="fas fa-home"></i> Go to Home</a>
+            <a href="login.html" class="sidebar-action-btn logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
     </div>
 </aside>
 
 <!-- Main Content -->
 <main class="dashboard-main">
-    <!-- Top Bar -->
-    <header class="topbar">
-        <div class="topbar-left">
-            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
-            <div class="topbar-search">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search records, prescriptions...">
-            </div>
-        </div>
-        <div class="topbar-right" style="position:relative;">
-            <button class="topbar-icon"><i class="fas fa-expand"></i></button>
-            <div class="topbar-profile">
-                <div class="topbar-profile-avatar">SJ</div>
-                <div class="topbar-profile-info">
-                    <div class="topbar-profile-name">Sarah Johnson</div>
-                    <div class="topbar-profile-role">Patient</div>
-                </div>
+    <header class="dashboard-topbar">
+        <div class="topbar-spacer"></div>
+        <div class="topbar-profile">
+            <div class="topbar-avatar" data-dynamic="avatar">SJ</div>
+            <div class="topbar-profile-info">
+                <div class="topbar-profile-name" data-dynamic="name">Sarah Johnson</div>
+                <div class="topbar-profile-role" data-dynamic="role">Patient</div>
             </div>
         </div>
     </header>
@@ -83,7 +69,7 @@
         <div class="section-panel active" id="overview">
             <!-- Welcome Banner -->
             <div class="welcome-banner">
-                <h2>Welcome back, Sarah!</h2>
+                <h2>Welcome back, <span data-dynamic="welcome-name">Sarah</span>!</h2>
                 <p>Here's your health overview for today. Stay on track with your wellness goals.</p>
                 <div class="welcome-stats">
                     <div class="welcome-stat">
@@ -443,8 +429,8 @@
             <div class="two-col-grid">
                 <div class="info-card">
                     <h4><i class="fas fa-user"></i> Profile Information</h4>
-                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value">Sarah Johnson</span></div>
-                    <div class="info-row"><span class="info-row-label">Email</span><span class="info-row-value">sarah.johnson@email.com</span></div>
+                    <div class="info-row"><span class="info-row-label">Name</span><span class="info-row-value" data-dynamic="settings-name">Sarah Johnson</span></div>
+                    <div class="info-row"><span class="info-row-label">Email</span><span class="info-row-value" data-dynamic="settings-email">sarah.johnson@email.com</span></div>
                     <div class="info-row"><span class="info-row-label">Phone</span><span class="info-row-value">(555) 123-4567</span></div>
                     <div class="info-row"><span class="info-row-label">Date of Birth</span><span class="info-row-value">Mar 15, 1990</span></div>
                     <div class="info-row"><span class="info-row-label">Address</span><span class="info-row-value">123 Maple Street, Springfield, IL</span></div>

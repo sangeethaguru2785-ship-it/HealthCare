@@ -566,6 +566,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+    align-items: stretch;
 }
 
 .team-card {
@@ -574,6 +575,9 @@
     overflow: hidden;
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .team-card:hover {
@@ -585,17 +589,25 @@
     position: relative;
     overflow: hidden;
     background: var(--bg-light);
+    height: 280px;
 }
 
-.team-card-image svg {
+.team-card-image svg,
+.team-card-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
     display: block;
 }
 
 .team-card-content {
     padding: 25px;
     text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .team-card-content h4 {
@@ -787,11 +799,14 @@
 .blog-image {
     position: relative;
     overflow: hidden;
+    height: 220px;
 }
 
-.blog-image svg {
+.blog-image svg,
+.blog-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 

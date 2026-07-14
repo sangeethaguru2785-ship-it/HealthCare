@@ -4,6 +4,40 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // --- Display Logged-in User ---
+    function getInitials(name) {
+        return name.split(' ').map(function (w) { return w.charAt(0); }).join('').toUpperCase().slice(0, 2);
+    }
+
+    var stored = localStorage.getItem('stacklyUser');
+    if (stored) {
+        var user = JSON.parse(stored);
+        var nameEl = document.querySelector('[data-dynamic="name"]');
+        var avatarEl = document.querySelector('[data-dynamic="avatar"]');
+        var roleEl = document.querySelector('[data-dynamic="role"]');
+        var welcomeEl = document.querySelector('[data-dynamic="welcome-name"]');
+        var settingsNameEl = document.querySelector('[data-dynamic="settings-name"]');
+        var settingsEmailEl = document.querySelector('[data-dynamic="settings-email"]');
+
+        if (nameEl) nameEl.textContent = user.name;
+        if (avatarEl) avatarEl.textContent = getInitials(user.name);
+        if (roleEl) roleEl.textContent = user.role === 'admin' ? 'Administrator' : 'Patient';
+        if (welcomeEl) welcomeEl.textContent = user.name;
+        if (settingsNameEl) settingsNameEl.textContent = user.name;
+        if (settingsEmailEl) settingsEmailEl.textContent = user.email;
+
+    }
+
+    // --- Logout: clear stored user data ---
+    var logoutBtn = document.querySelector('.sidebar-action-btn.logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.removeItem('stacklyUser');
+            window.location.href = 'login.html';
+        });
+    }
+
     // --- Sidebar Toggle ---
     const sidebar = document.querySelector('.sidebar');
     const sidebarToggle = document.querySelector('.sidebar-toggle');

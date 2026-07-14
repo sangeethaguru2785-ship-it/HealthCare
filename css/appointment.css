@@ -2,6 +2,22 @@
    Appointment Page Styles
    ============================================ */
 
+.page-hero {
+    background: #0F172A url('../images/appointment.webp') no-repeat center center;
+    background-size: cover;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.82) 0%, rgba(30, 41, 59, 0.75) 50%, rgba(15, 23, 42, 0.85) 100%);
+    z-index: 1;
+}
+
 .appointment-section {
     padding: 100px 0;
     background: var(--bg-light);
