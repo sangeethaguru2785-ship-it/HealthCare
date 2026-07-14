@@ -332,13 +332,31 @@
 
 .service-card {
     background: var(--white);
-    padding: 40px 30px;
+    padding: 0;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
     transition: var(--transition);
     cursor: pointer;
     box-shadow: var(--shadow-sm);
+}
+
+.service-card-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    background: #f0f4f8;
+}
+
+.service-card:hover .service-card-image img {
+    transform: scale(1.08);
 }
 
 .service-card:hover {
@@ -356,7 +374,7 @@
     justify-content: center;
     font-size: 2rem;
     color: var(--primary);
-    margin-bottom: 20px;
+    margin: 30px auto 20px;
     transition: var(--transition);
 }
 
@@ -370,6 +388,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 12px;
+    padding: 0 25px;
 }
 
 .service-card p {
@@ -377,6 +396,7 @@
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 15px;
+    padding: 0 25px;
 }
 
 .service-link {
@@ -386,6 +406,8 @@
     color: var(--primary);
     font-weight: 600;
     transition: var(--transition);
+    margin-left: 25px;
+    margin-bottom: 30px;
 }
 
 .service-link i {

@@ -728,11 +728,14 @@ img {
     color: rgba(255, 255, 255, 0.6);
     transition: var(--transition);
     font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .footer-column ul li a:hover {
     color: var(--accent);
-    padding-left: 5px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .working-hours li {
@@ -766,10 +769,14 @@ img {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
     transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .footer-bottom-links a:hover {
     color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 /* Footer Contact Info */
