@@ -55,14 +55,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function getPasswordStrength(password) {
         let score = 0;
-        if (password.length >= 6) score++;
-        if (password.length >= 10) score++;
-        if (/[A-Z]/.test(password) && /[a-z]/.test(password)) score++;
+        if (password.length >= 8) score++;
+        if (password.length >= 12) score++;
+        if (/[A-Z]/.test(password)) score++;
+        if (/[a-z]/.test(password)) score++;
         if (/[0-9]/.test(password)) score++;
         if (/[^A-Za-z0-9]/.test(password)) score++;
 
         if (score <= 2) return { level: 'weak', label: 'Weak password' };
-        if (score <= 3) return { level: 'medium', label: 'Medium strength' };
+        if (score <= 4) return { level: 'medium', label: 'Medium strength' };
         return { level: 'strong', label: 'Strong password' };
     }
 
@@ -73,6 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validatePhone(phone) {
         return /^[0-9+\-\s()]{7,}$/.test(phone);
+    }
+
+    function validatePassword(pw) {
+        if (!/[A-Z]/.test(pw)) return 'Password must contain at least one uppercase letter';
+        if (!/[a-z]/.test(pw)) return 'Password must contain at least one lowercase letter';
+        if (!/[0-9]/.test(pw)) return 'Password must contain at least one number';
+        if (!/[^A-Za-z0-9]/.test(pw)) return 'Password must contain at least one special character';
+        return '';
     }
 
     function deriveNameFromEmail(email) {
@@ -122,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const email = document.getElementById('email');
             const password = document.getElementById('password');
+            const remember = document.getElementById('remember');
             let valid = true;
 
             if (!email.value.trim()) {
@@ -135,8 +145,25 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!password.value) {
                 showFieldError(password, 'Password is required');
                 valid = false;
-            } else if (password.value.length < 6) {
-                showFieldError(password, 'Password must be at least 6 characters');
+            } else if (password.value.length < 8) {
+                showFieldError(password, 'Password must be at least 8 characters');
+                valid = false;
+            } else {
+                var pwError = validatePassword(password.value);
+                if (pwError) {
+                    showFieldError(password, pwError);
+                    valid = false;
+                }
+            }
+
+            if (!valid) return;
+
+            if (remember && !remember.checked) {
+                const errorEl = remember.closest('.form-options').querySelector('.error-message');
+                if (errorEl) {
+                    errorEl.textContent = 'Please check "Remember me" to sign in';
+                    errorEl.classList.add('show');
+                }
                 valid = false;
             }
 
@@ -151,7 +178,18 @@ document.addEventListener('DOMContentLoaded', function () {
         // Real-time clearing
         loginForm.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', () => clearFieldError(input));
+            input.addEventListener('change', () => clearFieldError(input));
         });
+
+        // Clear remember checkbox error when checked
+        if (remember) {
+            remember.addEventListener('change', function () {
+                if (this.checked) {
+                    const errorEl = this.closest('.form-options').querySelector('.error-message');
+                    if (errorEl) errorEl.classList.remove('show');
+                }
+            });
+        }
     }
 
     // --- Sign Up Form ---
@@ -199,9 +237,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!password.value) {
                 showFieldError(password, 'Password is required');
                 valid = false;
-            } else if (password.value.length < 6) {
-                showFieldError(password, 'Password must be at least 6 characters');
+            } else if (password.value.length < 8) {
+                showFieldError(password, 'Password must be at least 8 characters');
                 valid = false;
+            } else {
+                var pwError = validatePassword(password.value);
+                if (pwError) {
+                    showFieldError(password, pwError);
+                    valid = false;
+                }
             }
 
             if (!confirmPassword.value) {

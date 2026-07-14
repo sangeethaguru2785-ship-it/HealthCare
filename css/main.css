@@ -63,7 +63,35 @@ img {
 }
 
 /* ============================================
-   Navigation
+   Global Card Outline
+   ============================================ */
+.service-card,
+.team-card,
+.testimonial-card,
+.blog-card,
+.doctor-card,
+.department-card,
+.service-detail-card,
+.step-card,
+.mv-card,
+.why-card,
+.award-card,
+.contact-card,
+.location-card,
+.map-overlay-card,
+.stat-card,
+.chart-card,
+.table-card,
+.info-card,
+.auth-container,
+.auth-success-modal,
+.contact-mini,
+.appointment-form-wrapper {
+    border: 1px solid #60A5FA;
+}
+
+/* ============================================
+   Animations
    ============================================ */
 .navbar {
     position: fixed;

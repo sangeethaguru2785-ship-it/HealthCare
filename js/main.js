@@ -131,11 +131,21 @@ console.log('%c🏥 Stackly Health Center', 'color: #0077b6; font-size: 24px; fo
 console.log('%cYour Health, Our Priority', 'color: #48cae4; font-size: 14px;');
 
 // ============================================
-// Email Input Filtering (all pages)
+// Input Filtering (all pages)
 // ============================================
 document.addEventListener('keydown', function (e) {
-    if (e.target.type === 'email' && e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
-        if (!/^[a-zA-Z0-9@.+\-_]$/.test(e.key)) {
+    if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+        var el = e.target;
+        // Email: allow letters, digits, @ . + - _
+        if (el.type === 'email' && !/^[a-zA-Z0-9@.+\-_]$/.test(e.key)) {
+            e.preventDefault();
+        }
+        // Name fields: allow letters and spaces only
+        if (/name/i.test(el.id) && el.type === 'text' && !/^[a-zA-Z ]$/.test(e.key)) {
+            e.preventDefault();
+        }
+        // Phone fields: allow digits only
+        if (el.type === 'tel' && !/^[0-9]$/.test(e.key)) {
             e.preventDefault();
         }
     }
