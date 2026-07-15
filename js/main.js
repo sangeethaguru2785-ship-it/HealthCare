@@ -116,13 +116,12 @@ document.addEventListener('keydown', (e) => {
 // ============================================
 // Emergency Button → 404 Page
 // ============================================
-const emergencyBtn = document.getElementById('emergencyBtn');
-if (emergencyBtn) {
-    emergencyBtn.addEventListener('click', () => {
+document.querySelectorAll('.btn-emergency').forEach(btn => {
+    btn.addEventListener('click', () => {
         const inPages = window.location.pathname.includes('/pages/');
         window.location.href = inPages ? '../404.html' : '404.html';
     });
-}
+});
 
 // ============================================
 // Console Easter Egg
